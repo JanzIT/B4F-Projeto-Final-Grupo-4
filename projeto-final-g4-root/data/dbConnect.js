@@ -1,32 +1,75 @@
 import { MongoClient } from 'mongodb';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
-    throw new Error(
-        'Please define the MONGODB_URI environment variable inside .env.local'
-    );
+let client;
+let clientPromise;
+
+if (!process.env.MONGODB_URI) {
+  throw new Error('Add Mongo URI to .env.local');
 }
 
-let cachedDb = null;
-
-async function dbConnect() {
-    if (cachedDb) {
-        return cachedDb;
-    }
-
-    const client = await MongoClient.connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-
-    const db = client.db();
-
-    cachedDb = db;
-    return db;
+if (process.env.NODE_ENV === 'development') {
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri);
+    global._mongoClientPromise = client.connect();
+  }
+  clientPromise = global._mongoClientPromise;
+} else {
+  client = new MongoClient(uri);
+  clientPromise = client.connect();
 }
 
-export default dbConnect;
+export default clientPromise;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { MongoClient } from 'mongodb';
+
+// const MONGODB_URI = process.env.MONGODB_URI;
+
+// if (!MONGODB_URI) {
+//     throw new Error(
+//         'Please define the MONGODB_URI environment variable inside .env.local'
+//     );
+// }
+
+// let cachedDb = null;
+
+// async function dbConnect() {
+//     if (cachedDb) {
+//         return cachedDb;
+//     }
+
+//     const client = await MongoClient.connect(MONGODB_URI, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     });
+
+//     const db = client.db();
+
+//     cachedDb = db;
+//     return db;
+// }
+
+// export default dbConnect;
 
 
 
@@ -73,3 +116,5 @@ export default dbConnect;
 // }
 
 // export default dbConnect;
+
+
