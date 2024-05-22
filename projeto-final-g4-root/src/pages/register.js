@@ -1,4 +1,3 @@
-// src/pages/register.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -99,7 +98,7 @@ const Register = () => {
                     />
                 </div>
                 <button type="submit" className={styles.button}>Register</button>
-                <p>Already have an account? <span className={styles.link} onClick={() => goToLogin()}>Login</span></p>
+                <p>Already have an account? <span className={styles.link} onClick={() => goToLogin()} style={{ cursor: 'pointer' }}>Login</span></p>
                 {registerMessage && <p className={styles.errorMessage}>{registerMessage}</p>}
             </form>
         </div>
