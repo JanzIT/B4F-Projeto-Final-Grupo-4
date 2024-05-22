@@ -10,9 +10,9 @@ const Login = () => {
     const [loginMessage, setLoginMessage] = useState('');
     const router = useRouter();
 
-    const goToRegister = async () => {
-        router.push('/register')
-    }
+    const goToRegister = () => {
+        router.push('/register');
+    };
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -23,13 +23,12 @@ const Login = () => {
                 password,
             });
 
-            if (!response.data.success) {
+            if (response.data.success) {
+                setLoginMessage('');
+                router.push('/');
+            } else {
                 setLoginMessage(response.data.message);
-                return;
             }
-
-            setLoginMessage('');
-            router.push('/');
         } catch (error) {
             setLoginMessage('Login failed. Please try again.');
             console.error(error);
@@ -65,8 +64,8 @@ const Login = () => {
                     />
                 </div>
                 <button type="submit" className={styles.button}>Login</button>
-                <p>Don´t have an account?</p>
-                <button type="submit" onClick={() => goToRegister()} className={styles.button}>Register</button>
+                <p>Don't have an account?</p>
+                <button type="button" onClick={goToRegister} className={styles.button}>Register</button>
                 {loginMessage && <p className={styles.errorMessage}>{loginMessage}</p>}
             </form>
         </div>

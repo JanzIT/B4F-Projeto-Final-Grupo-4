@@ -1,3 +1,4 @@
+// src/pages/register.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -11,20 +12,20 @@ const Register = () => {
     const [registerMessage, setRegisterMessage] = useState('');
     const router = useRouter();
 
-    const goToLogin = async () => {
+    const goToLogin = () => {
         router.push('/auth');
     };
 
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        try {
-            if (password !== passwordConfirmation) {
-                setRegisterMessage('Passwords do not match');
-                return;
-            }
+        if (password !== passwordConfirmation) {
+            setRegisterMessage('Passwords do not match');
+            return;
+        }
 
-            const response = await axios.post('/api/auth/register', {
+        try {
+            const response = await axios.put('/api/auth', {
                 userInfo: {
                     username,
                     email,
@@ -32,13 +33,12 @@ const Register = () => {
                 },
             });
 
-            if (!response.data.success) {
+            if (response.data.success) {
+                setRegisterMessage('');
+                router.push('/auth');
+            } else {
                 setRegisterMessage(response.data.message);
-                return;
             }
-
-            setRegisterMessage('');
-            router.push('/auth');
         } catch (error) {
             setRegisterMessage('Registration failed. Please try again.');
             console.error(error);
@@ -98,7 +98,7 @@ const Register = () => {
                     />
                 </div>
                 <button type="submit" className={styles.button}>Register</button>
-                <p>Already have an account? <span className={styles.link} onClick={() => goToLogin()} style={{ cursor: 'pointer' }}>Login</span></p>
+                <p>Already have an account? <span className={styles.link} onClick={goToLogin} style={{ cursor: 'pointer' }}>Login</span></p>
                 {registerMessage && <p className={styles.errorMessage}>{registerMessage}</p>}
             </form>
         </div>
