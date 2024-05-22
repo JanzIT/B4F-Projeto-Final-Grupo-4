@@ -10,6 +10,10 @@ const Login = () => {
     const [loginMessage, setLoginMessage] = useState('');
     const router = useRouter();
 
+    const goToRegister = async () => {
+        router.push('/register')
+    }
+
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -61,6 +65,8 @@ const Login = () => {
                     />
                 </div>
                 <button type="submit" className={styles.button}>Login</button>
+                <p>Don´t have an account?</p>
+                <button type="submit" onClick={() => goToRegister()} className={styles.button}>Register</button>
                 {loginMessage && <p className={styles.errorMessage}>{loginMessage}</p>}
             </form>
         </div>
