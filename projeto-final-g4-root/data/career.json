@@ -1,0 +1,576 @@
+[
+    {
+        "titulo": "Machine Learning Engineer",
+        "descricao": "Develops and deploys machine learning models and algorithms to create intelligent systems capable of performing tasks without explicit programming.",
+        "keywords": [
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration",
+            "Data Interpretation",
+            "Self-learning",
+            "Project Management",
+            "Decision-Making"
+        ],
+        "rating": 4.8,
+        "class_hours": 170,
+        "study_plan": {
+            "essential": [
+                "Introduction to Machine Learning",
+                "Python Programming",
+                "Data Interpretation Basics"
+            ],
+            "intermediate": [
+                "Supervised Learning",
+                "Unsupervised Learning",
+                "Model Evaluation"
+            ],
+            "advanced": [
+                "Deep Learning",
+                "Reinforcement Learning",
+                "Deploying ML Models"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Data Scientist",
+        "descricao": "Analyzes complex datasets to uncover insights and trends, using statistical and machine learning techniques to inform business decisions.",
+        "keywords": [
+            "Research Skills",
+            "Data Interpretation",
+            "Time Management",
+            "Project Management",
+            "Decision-Making",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Team Collaboration"
+        ],
+        "rating": 4.9,
+        "class_hours": 180,
+        "study_plan": {
+            "essential": [
+                "Statistics Fundamentals",
+                "Python Programming",
+                "Data Interpretation Basics"
+            ],
+            "intermediate": [
+                "Machine Learning",
+                "Data Visualization",
+                "Statistical Modeling"
+            ],
+            "advanced": [
+                "Big Data Technologies",
+                "Advanced Machine Learning",
+                "Experimental Design"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Software Engineer",
+        "descricao": "Designs, develops, and tests software applications, ensuring they meet quality standards and fulfill user requirements.",
+        "keywords": [
+            "Adaptability",
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Creativity",
+            "Analytical Thinking",
+            "Communication",
+            "Team Collaboration"
+        ],
+        "rating": 4.8,
+        "class_hours": 160,
+        "study_plan": {
+            "essential": [
+                "Programming Fundamentals",
+                "Data Structures and Algorithms",
+                "Software Design Principles"
+            ],
+            "intermediate": [
+                "Object-Oriented Programming",
+                "Version Control (Git)",
+                "Software Testing"
+            ],
+            "advanced": [
+                "Web Development Frameworks",
+                "Cloud Computing",
+                "Agile Software Development"
+            ]
+        },
+        "price": "$100"
+    },
+    {
+        "titulo": "Cybersecurity Specialist",
+        "descricao": "Protects computer systems and networks from cyber threats, implementing security measures to safeguard sensitive information.",
+        "keywords": [
+            "Ethical Judgment",
+            "Risk Management",
+            "Technical Support",
+            "Documentation",
+            "Stress Management",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Adaptability",
+            "Team Collaboration",
+            "Communication"
+        ],
+        "rating": 4.7,
+        "class_hours": 150,
+        "study_plan": {
+            "essential": [
+                "Introduction to Cybersecurity",
+                "Network Security Fundamentals",
+                "Cryptography Basics"
+            ],
+            "intermediate": [
+                "Ethical Hacking",
+                "Security Tools and Techniques",
+                "Incident Response"
+            ],
+            "advanced": [
+                "Advanced Threat Detection",
+                "Security Governance",
+                "Digital Forensics"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "DevOps Engineer",
+        "descricao": "Collaborates with development and operations teams to automate and streamline processes, ensuring efficient and reliable software delivery.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.8,
+        "class_hours": 150,
+        "study_plan": {
+            "essential": [
+                "Introduction to DevOps",
+                "Linux Fundamentals",
+                "Version Control with Git"
+            ],
+            "intermediate": [
+                "CI/CD Pipelines",
+                "Configuration Management",
+                "Containerization"
+            ],
+            "advanced": [
+                "Cloud Infrastructure",
+                "Infrastructure as Code Tools",
+                "Monitoring and Logging"
+            ]
+        },
+        "price": "$100"
+    },
+    {
+        "titulo": "Cloud Architect",
+        "descricao": "Designs and implements cloud computing solutions, optimizing performance, scalability, and security for organizations.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.7,
+        "class_hours": 160,
+        "study_plan": {
+            "essential": [
+                "Cloud Computing Basics",
+                "Cloud Service Models",
+                "Cloud Security Fundamentals"
+            ],
+            "intermediate": [
+                "Cloud Infrastructure Setup",
+                "Networking in the Cloud",
+                "Identity and Access Management"
+            ],
+            "advanced": [
+                "Cloud Migration Strategies",
+                "Security in the Cloud",
+                "Cloud Governance"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Network Engineer",
+        "descricao": "Designs, implements, and manages an organization's network infrastructure to ensure reliable and secure network operations.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.7,
+        "class_hours": 150,
+        "study_plan": {
+            "essential": [
+                "Networking Fundamentals",
+                "Network Protocols",
+                "Switching and Routing"
+            ],
+            "intermediate": [
+                "Network Security",
+                "Wireless Networks",
+                "Network Troubleshooting"
+            ],
+            "advanced": [
+                "Advanced Network Design",
+                "Cloud Networking",
+                "Network Automation"
+            ]
+        },
+        "price": "$100"
+    },
+    {
+        "titulo": "Database Administrator",
+        "descricao": "Manages and maintains an organization's database systems, ensuring data integrity, availability, and performance.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.8,
+        "class_hours": 160,
+        "study_plan": {
+            "essential": [
+                "Database Fundamentals",
+                "SQL Programming",
+                "Database Design"
+            ],
+            "intermediate": [
+                "Database Administration",
+                "Performance Tuning",
+                "Backup and Recovery"
+            ],
+            "advanced": [
+                "Data Warehousing",
+                "Big Data Integration",
+                "Database Security"
+            ]
+        },
+        "price": "$100"
+    },
+    {
+        "titulo": "UI/UX Designer",
+        "descricao": "Creates intuitive and visually appealing user interfaces and experiences, focusing on user needs and usability.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.7,
+        "class_hours": 150,
+        "study_plan": {
+            "essential": [
+                "UI/UX Fundamentals",
+                "Graphic Design Principles",
+                "User Research Methods"
+            ],
+            "intermediate": [
+                "Wireframing and Prototyping",
+                "User Interface Design Tools",
+                "Information Architecture"
+            ],
+            "advanced": [
+                "Interaction Design",
+                "Responsive Design",
+                "Usability Testing"
+            ]
+        },
+        "price": "$100"
+    },
+    {
+        "titulo": "Blockchain Developer",
+        "descricao": "Designs and implements blockchain-based solutions, developing decentralized applications and smart contracts.",
+        "keywords": [
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Adaptability",
+            "Team Collaboration"
+        ],
+        "rating": 4.8,
+        "class_hours": 170,
+        "study_plan": {
+            "essential": [
+                "Blockchain Basics",
+                "Solidity Programming",
+                "Cryptocurrency Fundamentals"
+            ],
+            "intermediate": [
+                "Smart Contracts Development",
+                "Decentralized Applications (DApps)",
+                "Blockchain Security"
+            ],
+            "advanced": [
+                "Blockchain Scalability Solutions",
+                "Distributed Ledger Technology",
+                "Tokenization"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "IT Project Manager",
+        "descricao": "Manages IT projects from planning to implementation, ensuring deadlines and requirements are met.",
+        "keywords": [
+            "Project Management",
+            "Time Management",
+            "Communication",
+            "Team Collaboration",
+            "Leadership",
+            "Risk Management",
+            "Stakeholder Management",
+            "Documentation",
+            "Adaptability",
+            "Problem-Solving"
+        ],
+        "rating": 4.9,
+        "class_hours": 180,
+        "study_plan": {
+            "essential": [
+                "Project Management Fundamentals",
+                "Stakeholder Analysis",
+                "Risk Assessment"
+            ],
+            "intermediate": [
+                "Agile Methodologies",
+                "Resource Allocation",
+                "Quality Assurance"
+            ],
+            "advanced": [
+                "Strategic Planning",
+                "Change Management",
+                "Advanced Project Management Tools"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Cloud Security Engineer",
+        "descricao": "Protects cloud computing infrastructures against cyber threats by implementing security measures.",
+        "keywords": [
+            "Cloud Security",
+            "Analytical Thinking",
+            "Adaptability",
+            "Risk Management",
+            "Technical Support",
+            "Documentation",
+            "Team Collaboration",
+            "Communication",
+            "Ethical Judgment",
+            "Problem-Solving"
+        ],
+        "rating": 4.8,
+        "class_hours": 170,
+        "study_plan": {
+            "essential": [
+                "Cloud Security Fundamentals",
+                "Cybersecurity Best Practices",
+                "Risk Assessment"
+            ],
+            "intermediate": [
+                "Security Architecture",
+                "Penetration Testing",
+                "Incident Response"
+            ],
+            "advanced": [
+                "Encryption Techniques",
+                "Security Compliance",
+                "Cloud Security Certification Preparation"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Data Engineer",
+        "descricao": "Designs, develops, and maintains data management systems, ensuring integrity and availability.",
+        "keywords": [
+            "Data Engineering",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Team Collaboration",
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving"
+        ],
+        "rating": 4.9,
+        "class_hours": 180,
+        "study_plan": {
+            "essential": [
+                "Data Modeling",
+                "Database Management Systems",
+                "ETL Processes"
+            ],
+            "intermediate": [
+                "Data Warehousing",
+                "Big Data Technologies",
+                "Data Quality Assurance"
+            ],
+            "advanced": [
+                "Data Governance",
+                "Advanced Analytics",
+                "Machine Learning for Data Engineers"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "QA Automation Engineer",
+        "descricao": "Develops and executes automated tests to ensure software quality and performance.",
+        "keywords": [
+            "Quality Assurance",
+            "Automation",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Team Collaboration",
+            "Time Management",
+            "Self-learning",
+            "Documentation",
+            "Problem-Solving"
+        ],
+        "rating": 4.8,
+        "class_hours": 170,
+        "study_plan": {
+            "essential": [
+                "Software Testing Fundamentals",
+                "Test Automation Tools",
+                "Programming for Test Automation"
+            ],
+            "intermediate": [
+                "Continuous Integration/Continuous Deployment",
+                "Load Testing",
+                "Test Script Design"
+            ],
+            "advanced": [
+                "Advanced Automation Frameworks",
+                "Performance Testing",
+                "Test Maintenance and Reporting"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "AI Solutions Architect",
+        "descricao": "Designs and implements artificial intelligence solutions, defining architectures that meet business requirements.",
+        "keywords": [
+            "Artificial Intelligence",
+            "Analytical Thinking",
+            "Creativity",
+            "Communication",
+            "Team Collaboration",
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Documentation",
+            "Problem-Solving"
+        ],
+        "rating": 4.9,
+        "class_hours": 180,
+        "study_plan": {
+            "essential": [
+                "AI Fundamentals",
+                "Machine Learning Algorithms",
+                "Neural Networks"
+            ],
+            "intermediate": [
+                "Deep Learning",
+                "Natural Language Processing",
+                "Computer Vision"
+            ],
+            "advanced": [
+                "Reinforcement Learning",
+                "AI Ethics",
+                "Advanced AI Applications"
+            ]
+        },
+        "price": "$140"
+    },
+    {
+        "titulo": "Technical Writer",
+        "descricao": "Creates clear and precise technical documentation for software products and IT systems.",
+        "keywords": [
+            "Documentation",
+            "Communication",
+            "Creativity",
+            "Team Collaboration",
+            "Time Management",
+            "Self-learning",
+            "Project Management",
+            "Problem-Solving"
+        ],
+        "rating": 4.7,
+        "class_hours": 160,
+        "study_plan": {
+            "essential": [
+                "Technical Writing Basics",
+                "Document Structure",
+                "Writing Style and Tone"
+            ],
+            "intermediate": [
+                "Editing and Proofreading",
+                "User Documentation",
+                "API Documentation"
+            ],
+            "advanced": [
+                "Advanced Writing Techniques",
+                "Documenting Complex Systems",
+                "Technical Writing Tools"
+            ]
+        },
+        "price": "$100"
+    }
+]
