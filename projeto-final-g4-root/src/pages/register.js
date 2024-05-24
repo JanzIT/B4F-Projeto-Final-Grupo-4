@@ -18,21 +18,23 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-
+    
         if (password !== passwordConfirmation) {
             setRegisterMessage('Passwords do not match');
             return;
         }
-
+    
         try {
             const response = await axios.put('/api/auth', {
-                userInfo: {
-                    username,
-                    email,
-                    password,
-                },
+                name: username,
+                email,
+                password,
+                keywords: [],
+                newSkills: [],
+                careerSuggestions: [],
+                chosenCareer: null 
             });
-
+    
             if (response.data.success) {
                 setRegisterMessage('');
                 router.push('/auth');

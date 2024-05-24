@@ -12,7 +12,8 @@ export default async (req, res) => {
         }
     } else if (req.method === 'PUT') {
         try {
-            const { userInfo } = req.body;
+            const { name, email, password, keywords, newSkills, careerSuggestions, chosenCareer } = req.body;
+            const userInfo = { name, email, password, keywords, newSkills, careerSuggestions, chosenCareer: chosenCareer || null };
             await registerUser(userInfo);
             res.status(201).json({ success: true, message: 'Success! User Registered' });
         } catch (error) {

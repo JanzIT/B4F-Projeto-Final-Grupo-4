@@ -1,4 +1,5 @@
 // src/services/auth.js
+import bcrypt from 'bcrypt';
 import { getMongoCollection } from '../../data/mongodb';
 
 const getAllUsersFromDatabase = async () => {
@@ -18,7 +19,15 @@ const registerUser = async (userInfo) => {
         if (existingUser) {
             throw new Error('Email already exists');
         }
-        const result = await collection.insertOne(userInfo);
+        
+        // Criptografar a senha
+        const hashedPassword = await bcrypt.hash(userInfo.password, 10);
+        const userToInsert = {
+            ...userInfo,
+            password: hashedPassword
+        };
+
+        const result = await collection.insertOne(userToInsert);
         return result.insertedId;
     } catch (error) {
         throw error;
@@ -28,8 +37,14 @@ const registerUser = async (userInfo) => {
 const authUser = async (email, password) => {
     try {
         const collection = await getMongoCollection('DBtest', 'users');
-        const user = await collection.findOne({ email, password });
+        const user = await collection.findOne({ email });
         if (!user) {
+            throw new Error('Invalid email or password');
+        }
+
+        // Comparar a senha fornecida com a senha criptografada no banco de dados
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
             throw new Error('Invalid email or password');
         }
         return user;
