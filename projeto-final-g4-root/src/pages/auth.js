@@ -18,14 +18,13 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/api/auth', {
-                email,
-                password,
-            });
+            const response = await axios.post('/api/auth', { email, password });
 
             if (response.data.success) {
+                // Armazenar o token no localStorage
+                localStorage.setItem('token', response.data.token);
                 setLoginMessage('');
-                router.push('/');
+                router.push('/skillmental');
             } else {
                 setLoginMessage(response.data.message);
             }

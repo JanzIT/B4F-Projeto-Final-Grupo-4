@@ -1,6 +1,9 @@
 // src/services/auth.js
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { getMongoCollection } from '../../data/mongodb';
+
+const SECRET_KEY = 'your_secret_key'; // Use uma chave secreta segura em produção
 
 const getAllUsersFromDatabase = async () => {
     try {
@@ -47,7 +50,11 @@ const authUser = async (email, password) => {
         if (!isPasswordValid) {
             throw new Error('Invalid email or password');
         }
-        return user;
+
+        // Gerar um token JWT
+        const token = jwt.sign({ userId: user._id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+
+        return { user, token };
     } catch (error) {
         throw error;
     }
