@@ -8,6 +8,7 @@ function CareerMatch() {
   const router = useRouter();
 
   useEffect(() => {
+    //O Erro 304 é proveniente do fetch /api/user rodar duas vezes, resultando em "a informação requerida continua a mesma".
     fetch('/api/user')
       .then(response => response.json())
       .then(data => setFirstCareer(data.careerSuggestions[0]))

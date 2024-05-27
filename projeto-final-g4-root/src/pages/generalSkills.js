@@ -83,7 +83,7 @@ function GeneralSkills() {
 
             await axios.post("/api/insertSkillMental", {
                 selectedSkills: selectedSkills.skills,
-                userId: user._id,
+                userId: user.user._id,
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -4,6 +4,7 @@ import { getMongoCollection } from "../../data/mongodb";
 
 const insertSkillMental = async (selectedSkills, userId) => {
     try {
+        console.log("cenAAAAAAAAs",selectedSkills, userId)
         const collection = await getMongoCollection('DBtest', 'users');
 
         const result = await collection.updateOne(
