@@ -1,0 +1,212 @@
+{
+    "_id": "user123",
+    "userName": "Vitor Silva",
+    "email": "vitorsilva@example.com",
+    "userSkills": {
+      "generalSkills": [
+        "Critical Thinking",
+        "Problem-Solving",
+        "Creativity",
+        "Communication",
+        "Analytical Thinking",
+        "Adaptability",
+        "Research Skills",
+        "Team Collaboration",
+        "Attention to Detail",
+        "Ethical Judgment"
+      ],
+      "careerSkills": []
+    },
+    "scoreAcquiredSkills": 80,
+    "chosenCareer": "career123",
+    "careerSuggestions": [
+      {
+        "_id": "career123",
+        "careerName": "Business Analyst",
+        "careerDescription": "Develops the user interface of web applications.",
+        "careerGeneralSkills": [
+          "Critical Thinking",
+          "Problem-Solving",
+          "Creativity",
+          "Communication",
+          "Analytical Thinking",
+          "Adaptability",
+          "Research Skills",
+          "Team Collaboration",
+          "Attention to Detail",
+          "Ethical Judgment"
+        ],
+        "careerPlan": {
+          "essentials": [
+            { "name": "Business Analysis Fundamentals", "checked": false },
+            { "name": "Requirements Gathering Techniques", "checked": false },
+            { "name": "Process Flow Diagrams", "checked": false }
+          ],
+          "intermediate": [
+            { "name": "SWOT Analysis and Stakeholder Analysis", "checked": false },
+            { "name": "Business Modeling Tools", "checked": false },
+            { "name": "Agile Methodologies", "checked": false }
+          ],
+          "advanced": [
+            { "name": "Project Management", "checked": false },
+            { "name": "Business Intelligence and Data Analysis", "checked": false },
+            { "name": "ERP Tools", "checked": false }
+          ]
+        },
+        "course": {
+          "rating": 4.7,
+          "classHours": 140,
+          "price": "€ 200"
+        }
+      },
+      {
+        "_id": "career456",
+        "careerName": "Software Developer",
+        "careerDescription": "Designs, develops, and implements software to meet specific needs.",
+        "careerGeneralSkills": [
+          "Problem-Solving",
+          "Analytical Thinking",
+          "Critical Thinking",
+          "Attention to Detail",
+          "Team Collaboration",
+          "Communication",
+          "Adaptability",
+          "Research Skills"
+        ],
+        "careerPlan": {
+          "essentials": [
+            { "name": "Introduction to Programming", "checked": false },
+            { "name": "Data Structures and Algorithms", "checked": false },
+            { "name": "Object-Oriented Programming", "checked": false }
+          ],
+          "intermediate": [
+            { "name": "Software Design Patterns", "checked": false },
+            { "name": "Database Management Systems", "checked": false },
+            { "name": "Version Control Systems", "checked": false }
+          ],
+          "advanced": [
+            { "name": "Software Architecture", "checked": false },
+            { "name": "Machine Learning Fundamentals", "checked": false },
+            { "name": "Cloud Computing", "checked": false }
+          ]
+        },
+        "course": {
+          "rating": 4.8,
+          "classHours": 180,
+          "price": "€ 300"
+        }
+      },
+      {
+        "_id": "career789",
+        "careerName": "Data Scientist",
+        "careerDescription": "Analyzes and interprets complex data to help companies make decisions.",
+        "careerGeneralSkills": [
+          "Analytical Thinking",
+          "Problem-Solving",
+          "Critical Thinking",
+          "Attention to Detail",
+          "Communication",
+          "Team Collaboration",
+          "Adaptability",
+          "Research Skills"
+        ],
+        "careerPlan": {
+          "essentials": [
+            { "name": "Statistics for Data Science", "checked": false },
+            { "name": "Data Wrangling Techniques", "checked": false },
+            { "name": "Introduction to Machine Learning", "checked": false }
+          ],
+          "intermediate": [
+            { "name": "Data Visualization Tools", "checked": false },
+            { "name": "Predictive Modeling", "checked": false },
+            { "name": "Big Data Technologies", "checked": false }
+          ],
+          "advanced": [
+            { "name": "Advanced Machine Learning", "checked": false },
+            { "name": "Deep Learning", "checked": false },
+            { "name": "Natural Language Processing", "checked": false }
+          ]
+        },
+        "course": {
+          "rating": 4.9,
+          "classHours": 200,
+          "price": "€ 400"
+        }
+      },
+      {
+        "_id": "career012",
+        "careerName": "Digital Marketing Specialist",
+        "careerDescription": "Creates and manages marketing campaigns to promote products or services online.",
+        "careerGeneralSkills": [
+          "Creativity",
+          "Communication",
+          "Analytical Thinking",
+          "Problem-Solving",
+          "Adaptability",
+          "Research Skills",
+          "Attention to Detail",
+          "Team Collaboration"
+        ],
+        "careerPlan": {
+          "essentials": [
+            { "name": "Introduction to Digital Marketing", "checked": false },
+            { "name": "Content Marketing Strategies", "checked": false },
+            { "name": "SEO and SEM Basics", "checked": false }
+          ],
+          "intermediate": [
+            { "name": "Social Media Marketing", "checked": false },
+            { "name": "Email Marketing Campaigns", "checked": false },
+            { "name": "Web Analytics Tools", "checked": false }
+          ],
+          "advanced": [
+            { "name": "Advanced SEO Techniques", "checked": false },
+            { "name": "Conversion Rate Optimization", "checked": false },
+            { "name": "Marketing Automation", "checked": false }
+          ]
+        },
+        "course": {
+          "rating": 4.6,
+          "classHours": 150,
+          "price": "€ 250"
+        }
+      },
+      {
+        "_id": "career345",
+        "careerName": "UX/UI Designer",
+        "careerDescription": "Designs and improves the user experience and interface of digital products.",
+        "careerGeneralSkills": [
+          "Creativity",
+          "Attention to Detail",
+          "Problem-Solving",
+          "Analytical Thinking",
+          "Team Collaboration",
+          "Communication",
+          "Adaptability",
+          "Research Skills"
+        ],
+        "careerPlan": {
+          "essentials": [
+            { "name": "Introduction to UX Design", "checked": false },
+            { "name": "Wireframing and Prototyping", "checked": false },
+            { "name": "User Research Techniques", "checked": false }
+          ],
+          "intermediate": [
+            { "name": "UI Design Principles", "checked": false },
+            { "name": "Usability Testing", "checked": false },
+            { "name": "Interaction Design", "checked": false }
+          ],
+          "advanced": [
+            { "name": "Advanced Prototyping Tools", "checked": false },
+            { "name": "Design Systems", "checked": false },
+            { "name": "Accessibility in Design", "checked": false }
+          ]
+        },
+        "course": {
+          "rating": 4.7,
+          "classHours": 160,
+          "price": "€ 270"
+        }
+      }
+    ]
+  }
+  
