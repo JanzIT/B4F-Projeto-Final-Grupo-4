@@ -1,8 +1,8 @@
 // src/pages/register.js
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../styles/Auth.module.css'; // Importando o módulo CSS
+import axios from 'axios';
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -29,12 +29,14 @@ const Register = () => {
                 name: username,
                 email,
                 password,
-                keywords: [],
-                newSkills: [],
+                userSkills: {
+                    generalSkills: [],
+                    careerSkills: [],
+                },
+                scoreAcquiredSkills: null,
+                chosenCareer: null,
                 careerSuggestions: [],
-                chosenCareer: null 
             });
-    
             if (response.data.success) {
                 setRegisterMessage('');
                 router.push('/auth');
@@ -46,7 +48,6 @@ const Register = () => {
             console.error(error);
         }
     };
-
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Register</h1>

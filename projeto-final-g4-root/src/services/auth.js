@@ -1,9 +1,8 @@
-// src/services/auth.js
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { getMongoCollection } from '../../data/mongodb';
 
-const SECRET_KEY = 'your_secret_key'; // Use uma chave secreta segura em produção
+const SECRET_KEY = 'your_secret_key'; // Use a secure secret key in production
 
 const getAllUsersFromDatabase = async () => {
     try {
@@ -15,27 +14,24 @@ const getAllUsersFromDatabase = async () => {
     }
 };
 
-const registerUser = async (userInfo) => {
+async function registerUser(userInfo) {
     try {
-        const collection = await getMongoCollection('DBtest', 'users');
-        const existingUser = await collection.findOne({ email: userInfo.email });
-        if (existingUser) {
-            throw new Error('Email already exists');
-        }
-        
-        // Criptografar a senha
-        const hashedPassword = await bcrypt.hash(userInfo.password, 10);
-        const userToInsert = {
-            ...userInfo,
-            password: hashedPassword
-        };
-
-        const result = await collection.insertOne(userToInsert);
-        return result.insertedId;
+      const collection = await getMongoCollection('DBtest', 'users');
+      const existingUser = await collection.findOne({ email: userInfo.email });
+      if (existingUser) {
+        throw new Error('Email already exists');
+      }
+  
+      const hashedPassword = await bcrypt.hash(userInfo.password, 10); 
+      userInfo.password = hashedPassword;
+  
+      const result = await collection.insertOne(userInfo);
+      return result.insertedId;
     } catch (error) {
-        throw error;
+      throw error;
     }
-};
+  }
+  
 
 const authUser = async (email, password) => {
     try {
@@ -45,13 +41,13 @@ const authUser = async (email, password) => {
             throw new Error('Invalid email or password');
         }
 
-        // Comparar a senha fornecida com a senha criptografada no banco de dados
+        // Compare the provided password with the hashed password in the database
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             throw new Error('Invalid email or password');
         }
 
-        // Gerar um token JWT
+        // Generate a JWT token
         const token = jwt.sign({ userId: user._id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
 
         return { user, token };

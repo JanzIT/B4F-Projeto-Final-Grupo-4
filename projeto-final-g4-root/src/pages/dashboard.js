@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import CourseCardDash from "@/components/DashBoard.js/CourseCardDash";
+import withAuth from "@/components/Auth/withAuth";
 
 function Dashboard() {
   const [userName, setUserName] = useState("");
@@ -108,4 +109,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default  withAuth(Dashboard);
