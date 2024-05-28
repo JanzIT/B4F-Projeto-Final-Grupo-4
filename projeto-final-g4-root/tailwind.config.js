@@ -7,10 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "bg-main": " #070417",
+        "nav-bg": "#1A1A1A",
+        courseCard: "#3335A6",
+        courseCardD: "#7359B7",
+        mainBgGradientStart: "#070417",
+        mainBgGradientMiddle: "#0B0420",
+        mainBgGradientEnd: "#361768",
+      },
+      fontFamily: {
+        sans: ["Urbanist", "sans-serif"],
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'card-img': "url('/img-course1.png')",
+
       },
     },
   },

@@ -3,7 +3,17 @@ import userData from '../../../data/user.json';
 
 export default function handler(req, res) {
   if (req.method === 'GET') {
-    res.status(200).json(userData);
+    const { type } = req.query;
+    if (type === 'chosenCareer') {
+      const chosenCareer = userData.careerSuggestions.find(career => career._id === userData.chosenCareer);
+      if (chosenCareer) {
+        res.status(200).json(chosenCareer);
+      } else {
+        res.status(404).json({ message: 'Chosen career not found' });
+      }
+    } else {
+      res.status(200).json(userData);
+    }
   } else {
     res.status(405).json({ message: 'Method not allowed' });
   }
@@ -28,3 +38,4 @@ export default function handler(req, res) {
 //         res.status(405).json({ message: 'Method not allowed' });
 //     }
 // };
+

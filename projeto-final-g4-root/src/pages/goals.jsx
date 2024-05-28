@@ -40,7 +40,7 @@ const GoalsPage = () => {
   };
 
   return (
-    <div className="GoalsStyles bg-gradient-to-b from-slate-950 to-violet-950 min-h-screen flex flex-col justify-center items-center text-white p-8">
+    <div className="GoalsStyles bg-gradient-to-b from-slate-950 to-violet-950 min-h-screen flex flex-col justify-center items-center text-white p-8 ">
       <div>
         <h1 className="text-4xl font-medium">
           What are your goals with our app?
