@@ -17,14 +17,15 @@ function Career() {
   }, []);
 
   return (
-    <div className=" bg-slate-950 p-4">
+    <div className=" bg-slate-950 p-4 min-h-screen">
       <div
         className="
-        bg-gradient-to-t from-indigo-800 to-violet-500 text-white
+        bg-gradient-to-t from-indigo-800 to-violet-500 text-white min-w-10
         rounded-xl p-1 m-2 h-52
+        align-middle
 "
       >
-        <div className="flex align-center">
+        <div className="flex">
           <div>
             <p>You are migrating to</p>
             <h1 className="text-3xl font-semibold mb-4">
@@ -33,9 +34,13 @@ function Career() {
           </div>
 
           <div className="mr-5">
-            <img src="/img-career.png" alt="profile" className="h-40" />
+
+            <img src="/img-career.png" alt="profile" className="h-40 w-" />
+            
           </div>
+
         </div>
+
       </div>
 
       <div className="text-white">
@@ -54,14 +59,13 @@ function Career() {
           </div>
         </div>
 
-        {/* <Button label="Back to Dashboard" onClick={() => router.push('/dashboard')} /> */}
       </div>
 
       <div>
         <CourseCardCareer career={chosenCareer} />
       </div>
-      {/* 
-      <NavBar /> */}
+      
+      <NavBar />
     </div>
   );
 }

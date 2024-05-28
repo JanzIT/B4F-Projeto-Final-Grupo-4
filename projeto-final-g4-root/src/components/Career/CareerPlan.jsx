@@ -90,7 +90,7 @@ const CareerPlan = () => {
   // Renderizar lista de habilidades com checkboxes
   const renderSkillsList = (category) => (
     <div key={category}>
-      <h2 className="text-xl font-medium mb-2">
+      <h2 className="text-xl font-medium mb-4 mt-6">
         {category.charAt(0).toUpperCase() + category.slice(1)}
       </h2>
       {careerData.skills[category].map((skill, index) => (
@@ -98,11 +98,11 @@ const CareerPlan = () => {
           <input
             type="checkbox"
             id={`${category}-${index}`}
-            className="mr-2"
+            className="mr-4 custom-checkbox"
             checked={skill.checked}
             onChange={() => toggleSkill(category, index)}
           />
-          <label htmlFor={`${category}-${index}`} className="text-sm">
+          <label htmlFor={`${category}-${index}`} className="text-l">
             {skill.name}
           </label>
         </div>
@@ -112,15 +112,23 @@ const CareerPlan = () => {
 
   return (
     <div className="text-white bg-neutral-900 rounded-[22.51px] p-10">
-      <h1 className="text-2xl font-medium mb-4">Career Plan</h1>
-      <h2 className="text-lg font-medium mb-2">{careerData.name}</h2>
+      <img
+        src="/img-career-plan.svg"
+        alt="Logo"
+        className="mb-2 mx-auto block"
+      />
+      <h1 className="text-2xl font-medium mb-1 text-center">Career Plan</h1>
+      <h2 className="text-xl font-medium mb-10 text-center">
+        {careerData.name}
+      </h2>
 
       {renderSkillsList("essentials")}
       {renderSkillsList("intermediate")}
       {renderSkillsList("advanced")}
 
+      {/* A LISTA DE USER SKILLS DEVE SER DIRECIONADA PARA ProfileSkills */}
       <h2 className="text-xl font-medium mb-2 mt-4">User Skills</h2>
-      <ul>
+      <ul >
         {userData.skills.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}
@@ -130,3 +138,4 @@ const CareerPlan = () => {
 };
 
 export default CareerPlan;
+   

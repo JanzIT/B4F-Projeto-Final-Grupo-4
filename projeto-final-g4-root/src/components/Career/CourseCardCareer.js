@@ -6,31 +6,25 @@ const CourseCardCareer = ({ career }) => {
   }
 
   return (
-    <div
-      className="bg-card-img	
-    pb rounded-xl shadow-lg h-80 content-end mb-20 "
-    >
-      <div>
-        <p className="text-sm text-white ml-4 mb-28">
-          Rating: {career.course.rating}
-        </p>
+    <div className="bg-card-img rounded-2xl h-80 ">
+      <p className="text-sm text-white pt-4 mx-4">
+        Rating: {career.course.rating}
+      </p>
 
-        <div
+      <div
         className="bg-gray-100 text-gray-900
-        rounded-3xl h-24
-        m-4 pb-2 ">
+        rounded-3xl h-24 m-4 p-4 
+        
+        "
+      >
+        <div>
+          <p className="text-2xl font-medium">{career.careerName}</p>
+        </div>
 
-          <div>
-            <p className="text-2xl font-medium">{career.careerName}</p>
-          </div>
-          .
-          <div
-            className="text-lg flex        justify-between"
-          >
-            <p>{career.course.price}</p>
+        <div className="text-lg flex justify-between">
+          <p>{career.course.price}</p>
 
-            <p>{career.course.classHours}h</p>
-          </div>
+          <p>{career.course.classHours}h</p>
         </div>
       </div>
     </div>
