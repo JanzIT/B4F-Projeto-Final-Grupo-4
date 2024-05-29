@@ -12,20 +12,24 @@ function Dashboard() {
   const { user, setUser } = useUser();
 
   useEffect(() => {
-    if (!user) return;
+    const fetchUserData = async () => {
+      if (user && user._id) {
+        try {
+          const response = await fetch(`/api/user/${user._id}`);
+          const data = await response.json();
+          if (data.user) {
+            setUser(data.user);
+            setUserName(data.user.name);
+            setCareerSuggestions(data.user.careerSuggestions || []);
+          }
+        } catch (error) {
+          console.error("Error fetching career suggestions:", error);
+        }
+      }
+    };
 
-    fetch(`/api/user/${user._id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const { user } = data;
-        setUser(user);
-        setUserName(user.name);
-        setCareerSuggestions(user.careerSuggestions || []);
-      })
-      .catch((error) =>
-        console.error("Error fetching career suggestions:", error)
-      );
-  }, [user, setUser]);
+    fetchUserData();
+  }, [user?._id]);
 
   if (!user) {
     return <div>LOADING SCREEN</div>;
