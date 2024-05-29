@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb";
 import { getMongoCollection } from "../../data/mongodb";
 
 export async function findCorrelatedCareers(user) {
+  console.log("CARRERSUG! /services/fincorrelatedcareers user = Ok")
   const collection = await getMongoCollection("DBtest", "newCareer");
   const careers = await collection.find().toArray();
   const careersWithAffinity = careers.map((career) => ({

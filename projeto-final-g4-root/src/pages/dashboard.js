@@ -8,16 +8,21 @@ function Dashboard() {
   const [careerSuggestions, setCareerSuggestions] = useState([]);
 
   useEffect(() => {
-    fetch("/api/user")
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/user");
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
         setUserName(data.userName);
         setCareerSuggestions(data.careerSuggestions);
-      })
+      } catch (error) {
+        console.error("Error fetching career suggestions:", error);
+      }
+    };
 
-      .catch((error) =>
-        console.error("Error fetching career suggestions:", error)
-      );
+    fetchData();
   }, []);
 
   const firstCareer = careerSuggestions[0];

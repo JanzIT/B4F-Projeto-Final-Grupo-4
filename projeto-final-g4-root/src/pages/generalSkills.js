@@ -49,7 +49,7 @@ function GeneralSkills() {
     if (user) {
       setUser(user);
     } else {
-      router.push("/auth"); 
+      router.push("/auth");
     }
   }, [router]);
 
@@ -85,18 +85,18 @@ function GeneralSkills() {
         throw new Error("Token not found");
       }
 
-      await axios.post(
-        "/api/insertSkillMental",
-        {
-          selectedSkills: selectedSkills.skills,
-          userId: user.user._id,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      // await axios.post(
+      //   "/api/insertSkillMental",
+      //   {
+      //     selectedSkills: selectedSkills.skills,
+      //     userId: user.user._id,
+      //   },
+      //   {
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //     },
+      //   }
+      // );
 
       await axios.post(
         "/api/orderedCareerSuggestions",
@@ -149,9 +149,8 @@ function GeneralSkills() {
                 onClick={() =>
                   handleSkillClick(mentalSkill, setMentalSkill, index)
                 }
-                className={`flex flex-wrap p-2 my-2 rounded-full cursor-pointer text-lg font-medium ${
-                  skill.checked ? "bg-violet-900" : "bg-slate-800"
-                } text-white`}
+                className={`flex flex-wrap p-2 my-2 rounded-full cursor-pointer text-lg font-medium ${skill.checked ? "bg-violet-900" : "bg-slate-800"
+                  } text-white`}
               >
                 {skill.name}
               </div>
@@ -183,9 +182,8 @@ function GeneralSkills() {
                     index
                   )
                 }
-                className={`flex flex-wrap p-2 my-2 rounded-full cursor-pointer text-lg font-medium ${
-                  skill.checked ? "bg-violet-900" : "bg-slate-800"
-                } text-white`}
+                className={`flex flex-wrap p-2 my-2 rounded-full cursor-pointer text-lg font-medium ${skill.checked ? "bg-violet-900" : "bg-slate-800"
+                  } text-white`}
               >
                 {skill.name}
               </div>

@@ -1,6 +1,7 @@
 
 import { insertSkillMental } from "@/services/insertSkillMental";
 import { findCorrelatedCareers } from "@/services/orderedCareerSuggestions";
+import { getUserById } from "@/services/user";
 
 
 export default async (req, res) => {

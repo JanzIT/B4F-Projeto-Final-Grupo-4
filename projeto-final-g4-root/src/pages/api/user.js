@@ -1,4 +1,4 @@
-//Karol´s Json tests
+//TIRAR ESSA FUNÇÃO COMENTADA PARA FUNCIONAR A APP, MAS DASH FICA SEM O USER FAKE
 // import { findCorrelatedCareers } from "@/services/orderedCareerSuggestions";
 // import userData from "../../../data/user.json";
 
@@ -19,7 +19,8 @@
 //     // const user = await getUserById(userid);
 //     if (type === "chosenCareer") {
 //       const chosenCareer = userData.careerSuggestions.find(
-//         (career) => career._id === userData.chosenCareer
+//         (career) => career._id === userData.chosenCareer,
+//         console.log("chosenCareer identificador /api/user", chosenCareer)
 //       );
 //       if (chosenCareer) {
 //         res.status(200).json(chosenCareer);
@@ -42,7 +43,7 @@
 
 
 
-//uncomment this and the lower /dashboard page for fake data
+// TIRAR ESSA FUNÇÃO COMENTADA CASO QUEIRA O USER FAKE NA DASHBOARD
 import userData from '../../../data/user.json';
 
 export default function handler(req, res) {
