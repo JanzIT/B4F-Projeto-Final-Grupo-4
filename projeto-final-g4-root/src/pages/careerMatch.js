@@ -1,22 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Button from "@/components/Common/Button";
-import { useRouter } from 'next/router';
-import withAuth from '@/components/Auth/withAuth';
+import { useRouter } from "next/router";
+import withAuth from "@/components/Auth/withAuth";
+import axios from "axios";
 
 function CareerMatch() {
   const [firstCareer, setFirstCareer] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
+    const fetchData = async () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      const token = user.token;
+      console.log(user.user._id);
+      return await fetch("/api/user", {
+        method: "POST",
+        body: JSON.stringify({
+          userId: user.user._id,
+        }),
+      });
+    };
     //O Erro 304 é proveniente do fetch /api/user rodar duas vezes, resultando em "a informação requerida continua a mesma".
-    fetch('/api/user')
-      .then(response => response.json())
-      .then(data => setFirstCareer(data.careerSuggestions[0]))
-      .catch(error => console.error('Error fetching career suggestions:', error));
+
+    fetchData()
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setFirstCareer(data.carreers[0]);
+      })
+      .catch((error) =>
+        console.error("Error fetching career suggestions:", error)
+      );
   }, []);
 
   const goToCareer = () => {
-    router.push('/dashboard'); 
+    router.push("/dashboard");
   };
 
   return (
@@ -24,7 +42,7 @@ function CareerMatch() {
       <img src="/img-career-match.png" alt="Logo" className="mb-6" />
       <div className="text-center text-white">
         <h1 className="text-3xl font-semibold">
-          {firstCareer ? firstCareer.careerName : 'Loading...'}
+          {firstCareer ? firstCareer.careerName : "Loading..."}
         </h1>
         <p className="mt-6 mb-4 font-semibold text-xl">
           This career is an 80% match for you.
@@ -35,4 +53,4 @@ function CareerMatch() {
   );
 }
 
-export default  withAuth(CareerMatch);
+export default withAuth(CareerMatch);

@@ -28,7 +28,7 @@ function Dashboard() {
 
   return (
     <div className="text-white bg-slate-950 p-6">
-      <div className="flex mt-8 ">
+      <div className="flex justify-between mt-8 ">
         <div className="">
           <h1 className="text-3xl font-semibold mb-4">Hi, {userName}</h1>
           <h2>Find your new career</h2>
@@ -43,45 +43,54 @@ function Dashboard() {
         <div class=" flex items-center w-full ">
           <input
             type="text"
-            class="bg-zinc-800 p-2 my-2 rounded-3xl flex-grow focus:outline-none"
+            class="bg-zinc-800 p-2 my-2 mt-2 rounded-3xl flex-grow focus:outline-none"
             placeholder="Search..."
           />{" "}
         </div>
 
-        <p>This career is an 80% match for you.</p>
+        <p className="mb-4 mt-5">This career is an 80% match for you.</p>
       </div>
 
-      <div className=" my-3 bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl p-1 flex h-40">
-        <div className="w-52 ml-5">
-          <h3 className="text-3xl"> {firstCareer && firstCareer.careerName}</h3>
+      <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl px-4 py-4 flex flex-row items-center justify-center h-40">
 
-          <button>call to action</button>
+
+
+        <div className="flex flex-row items-center p-2">
+
+          <div className="mx-4">
+            <h3 className="text-4xl font-semibold mb-2"> {firstCareer && firstCareer.careerName}</h3>
+
+            <button>call to action</button>
+          </div>
+
+          <div className="">
+            <img src="/img-career.png" alt="profile" className="" />
+          </div>
         </div>
-        <div className="mr-5">
-          <img src="/img-career.png" alt="profile" className="h-24" />
-        </div>
+
       </div>
 
-      <div>
-        <p>Careers that might interest you</p>
+
+
+      <div className="mt-5">
+        <p className="font-medium text-xl">Careers that might interest you</p>
         <div
-          className="flex
-   
-   text-xl gap-2"
+          className="flex items-center
+   text-xl gap-2 mt-3 overflow-x-scroll	"
         >
-          <div className="bg-purple-800 rounded-2xl">
+          <div className="bg-purple-800 rounded-2xl w-auto h-14">
             {secondCareer && secondCareer.careerName}
           </div>
 
-          <div className="bg-purple-800 rounded-2xl">
+          <div className="bg-purple-800 rounded-2xl w-auto h-14">
             {thirdCareer && thirdCareer.careerName}
           </div>
 
-          <div className="bg-purple-800 rounded-2xl">
+          <div className="bg-purple-800 rounded-2xl w-auto h-14">
             {fourthCareer && fourthCareer.careerName}
           </div>
 
-          <div className="bg-purple-800 rounded-2xl">
+          <div className="bg-purple-800 rounded-2xl w-auto h-14">
             {ffifthCareer && ffifthCareer.careerName}
           </div>
         </div>
@@ -109,4 +118,4 @@ function Dashboard() {
   );
 }
 
-export default  withAuth(Dashboard);
+export default withAuth(Dashboard);

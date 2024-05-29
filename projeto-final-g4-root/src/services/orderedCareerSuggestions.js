@@ -1,22 +1,33 @@
-js 
-
+import { ObjectId } from "mongodb";
 import { getMongoCollection } from "../../data/mongodb";
-import { getUserById } from "./user";
 
+export async function findCorrelatedCareers(user) {
+  const collection = await getMongoCollection("DBtest", "newCareer");
+  const careers = await collection.find().toArray();
+  const careersWithAffinity = careers.map((career) => ({
+    ...career,
+    affinity: calcularCorrespondencia(user, career),
+  }));
+  careersWithAffinity.sort((a, b) => b.affinity - a.affinity);
+  const orderedCareers = careersWithAffinity.slice(0, 5);
 
+  await updateCareerSuggestions(user._id, orderedCareers);
 
-
-export async function findCorrelatedCareers(userId) {
-    const user = await getUserById(userId)
-    const collection = await getMongoCollection('DBtest', 'newCareers')
-    const careers = await collection.find().toArray()
-    const careersWithAffinity= careers.map(career => ({...career, affinity:calcularCorrespondencia(user,career)}) ) 
-    careersWithAffinity.sort((a, b) => a.affinity < b.affinity  ? 1 : -1)
-    return careersWithAffinity.slice(0, 5)
-    
-
+  return orderedCareers;
 }
 
 function calcularCorrespondencia(user, career) {
-    return career.careerGeneralSkills.reduce((acc, keyword) => user.generalSkills.includes(keyword) ? acc + 1 : acc, 0)
+  return career.careerGeneralSkills.reduce(
+    (acc, generalSkill) =>
+      user.userSkills.generalSkills.includes(generalSkill) ? acc + 1 : acc,
+    0
+  );
+}
+
+async function updateCareerSuggestions(userId, careerSuggestions) {
+  const collection = await getMongoCollection("DBtest", "users");
+  await collection.updateOne(
+    { _id: new ObjectId(userId) },
+    { $set: { careerSuggestions } }
+  );
 }
