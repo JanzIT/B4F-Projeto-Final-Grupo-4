@@ -12,7 +12,7 @@ const NavBar = () => {
     
     <div className="flex justify-center">
       <nav
-        className="fixed bottom-10 rounded-full 
+        className="fixed bottom-2 rounded-full 
         flex justify-around 
         items-center
     h-20 w-11/12 mx-24
