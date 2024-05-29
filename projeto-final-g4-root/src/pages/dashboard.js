@@ -62,18 +62,18 @@ function Dashboard() {
 
         <div className="flex flex-row items-center p-2">
 
-          <div className="mx-4">
-            <h3 className="text-4xl font-semibold mb-2"> {firstCareer && firstCareer.careerName}</h3>
+        <div className="mx-4">
+          <h3 className="text-4xl font-semibold mb-2"> {firstCareer && firstCareer.careerName}</h3>
 
-            <button>call to action</button>
-          </div>
-
-          <div className="">
-            <img src="/img-career.png" alt="profile" className="" />
-          </div>
+          <button>call to action</button>
         </div>
-
+        
+        <div className="">
+          <img src="/img-career.png" alt="profile" className="" />
+        </div>
       </div>
+
+</div>
 
 
 
