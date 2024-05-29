@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 /* globals.css */
+/* checkboxes */
 .custom-checkbox {
   appearance: none;
   background-color: transparent;
@@ -23,11 +24,34 @@
 }
 
 .custom-checkbox:checked::after {
-  content: '✔'; /* Símbolo de check */
+  content: "✔"; /* Símbolo de check */
   color: #fff;
   font-size: 1rem; /* Ajuste o tamanho do check */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* streak */
+.day-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #6f6cff;
+  font-weight: bold;
+}
+
+.day-circle-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #6f6cff;
+  border-radius: 50%;
+  font-weight: bold;
 }
