@@ -18,10 +18,10 @@ const CourseCardCareer = ({ career }) => {
         "
       >
        
-          <p className="text-2xl font-medium">{career.careerName}</p>
+          <p className="text-2xl font-medium">Course {career.careerName}</p>
         
 
-        <div className="text-lg flex justify-between">
+        <div className="text-lg flex justify-between mt-1">
           <p>{career.course.price}</p>
           <p>{career.course.classHours}h</p>
         </div>
