@@ -6,6 +6,7 @@ import axios from "axios";
 
 function CareerMatch() {
   const [firstCareer, setFirstCareer] = useState(null);
+  const [user, setUser] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -25,7 +26,6 @@ function CareerMatch() {
     fetchData()
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setFirstCareer(data.carreers[0]);
       })
       .catch((error) =>
@@ -45,7 +45,7 @@ function CareerMatch() {
           {firstCareer ? firstCareer.careerName : "Loading..."}
         </h1>
         <p className="mt-6 mb-4 font-semibold text-xl">
-          This career is an 80% match for you.
+          This career is an 80% match for you.{user}
         </p>
       </div>
       <Button label="Let's get started" onClick={goToCareer} />
