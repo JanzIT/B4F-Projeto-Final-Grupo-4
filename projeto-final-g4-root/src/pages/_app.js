@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   return (
     <NextUIProvider>
       <div className={`${urbanist.className}`}>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </div>
     </NextUIProvider>
   );
