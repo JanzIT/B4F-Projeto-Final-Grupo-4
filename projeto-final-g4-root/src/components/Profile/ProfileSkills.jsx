@@ -19,7 +19,7 @@ const ProfileSkills = () => {
   const [selectedSkills, setSelectedSkills] = useState([...skills]);
 
   return (
-    <div className="text-white bg-neutral-900 rounded-[22.51px] p-10">
+    <div className="text-white bg-neutral-900 rounded-[22.51px] p-10 mb-16">
       <img
         src="/img-profile-skills.svg"
         alt="Logo"
