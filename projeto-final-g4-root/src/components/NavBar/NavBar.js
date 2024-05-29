@@ -8,6 +8,8 @@ import NavCareer from "./NavCareer";
 const NavBar = () => {
     const router = useRouter()
   return (
+
+    
     <div className="flex justify-center">
       <nav
         className="fixed bottom-10 rounded-full 
@@ -36,6 +38,9 @@ const NavBar = () => {
         </Link>
       </nav>
     </div>
+
+
+
   );
 };
 
