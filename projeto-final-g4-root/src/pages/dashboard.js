@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 import NavBar from "@/components/NavBar/NavBar";
 import CourseCardDash from "@/components/DashBoard.js/CourseCardDash";
 import CourseLabel from "@/components/DashBoard.js/CourseLabel";
@@ -45,32 +46,33 @@ function Dashboard() {
       <div className="flex justify-between mt-8">
         <div>
           <h1 className="text-3xl font-semibold mb-4">Hi, {userName}</h1>
-          <h2>Find your new career</h2>
+          <h2 className="font-medium text-2xl">Find your new career</h2>
         </div>
-        <div className="h-20">
+        <div className="h-20 mb-2">
           <img src="/img-profile.png" alt="profile" className="mb-6" />
         </div>
       </div>
 
       <div>
-        <div className="flex items-center w-full">
+        <div className="flex items-center w-full bg-zinc-800 p-2 my-2 mt-2 rounded-3xl">
+          <FaSearch className="text-gray-500 mx-3" />
           <input
             type="text"
-            className="bg-zinc-800 p-2 my-2 mt-2 rounded-3xl flex-grow focus:outline-none"
+            className="bg-zinc-800 text-gray-500 flex-grow focus:outline-none"
             placeholder="Search..."
           />
         </div>
-        <p className="mb-4 mt-5">This career is an 80% match for you.</p>
+        <p className="mb-4 mt-6 ">This career is an 80% match for you.</p>
       </div>
 
       {firstCareer && (
-        <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl px-4 py-4 flex flex-row items-center justify-center h-40">
+        <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-3xl px-4 py-4 flex flex-row items-center justify-center h-40">
           <div className="flex flex-row items-center p-2">
             <div className="mx-4">
               <h3 className="text-4xl font-semibold mb-2">
                 {firstCareer.careerName}
               </h3>
-              <button>Call to Action</button>
+              <button>Start Your Journey</button>
             </div>
             <div>
               <img src="/img-career.png" alt="career" />
@@ -79,8 +81,8 @@ function Dashboard() {
         </div>
       )}
 
-      <div className="mt-5">
-        <p className="font-medium text-xl">Careers that might interest you</p>
+      <div className="mt-6 mb-6">
+        <p className="font-medium text-2xl">Careers that might interest you</p>
         <div className="flex items-center text-xl gap-2 mt-3 overflow-x-scroll">
           {[secondCareer, thirdCareer, fourthCareer, fifthCareer].map(
             (career, index) =>
@@ -90,7 +92,7 @@ function Dashboard() {
       </div>
 
       <div className="mt-4">
-        <p>Popular courses</p>
+        <p className="font-medium text-2xl">Popular courses</p>
         <div className="mt-2 flex flex-row overflow-x-scroll">
           <div className="text-4xl flex">
             {firstCareer && (
