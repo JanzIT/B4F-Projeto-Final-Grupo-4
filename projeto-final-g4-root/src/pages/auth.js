@@ -30,14 +30,14 @@ const Login = () => {
 
   return (
     <div
-      className="flex min-h-full flex-1 flex-col justify-center px-6 py-10 lg:px-8 
+      className="flex min-h-full flex-1 flex-col justify-center px-6 pb-10 pt-14 lg:px-8 
     bg-gradient-to-b from-mainBgGradientStart via-mainBgGradientMiddle to-mainBgGradientEnd"
     >
       <div className="m:mx-auto sm:w-full sm:max-w-sm">
         <img className="mx-auto w-auto" src="/img-login.png" alt="Logo" />
-        <h1 className="text-white font-semibold text-3xl tracking-tight mb-4 mt-10">
+        <h1 className="text-white font-semibold text-[26px] tracking-tight mb-5 mt-8">
           Start your tech career journey.{" "}
-          <span className="bg-gradient-to-tr from-yellow-400 to-purple-800 bg-clip-text text-transparent">
+          <span className=" font-bold bg-gradient-to-tl from-purple-700 to-orange-400 bg-clip-text text-transparent">
             Find the perfect match!
           </span>
         </h1>
@@ -69,7 +69,7 @@ const Login = () => {
                 block w-full h-10 px-4 py-2 rounded-full   bg-gray-800
                  text-gray-500 shadow-sm  placeholder:text-gray-500 focus:ring-2
                 focus:ring-inset focus:ring-indigo-800 sm:text-sm sm:leading-6 focus:outline-none"
-                placeholder="Type your email"
+                placeholder="Enter your email"
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ const Login = () => {
                 className="block w-full h-10 px-4 py-2 rounded-full bg-gray-800 
                 text-gray-500 shadow-sm placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-800
                 sm:text-sm sm:leading-6 focus:outline-none"
-                placeholder="Type your password"
+                placeholder="Enter your password"
               />
             </div>{" "}
             <div className="text-sm flex justify-end ">
