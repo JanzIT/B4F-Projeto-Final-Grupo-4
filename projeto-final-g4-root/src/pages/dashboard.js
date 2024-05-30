@@ -62,7 +62,7 @@ function Dashboard() {
             placeholder="Search..."
           />
         </div>
-        <p className="mb-4 mt-6 ">This career is an 80% match for you.</p>
+        <p className="mb-4 mt-8 ">This career is an 80% match for you.</p>
       </div>
 
       {firstCareer && (
@@ -81,9 +81,9 @@ function Dashboard() {
         </div>
       )}
 
-      <div className="mt-6 mb-6">
+      <div className="mt-8 mb-8">
         <p className="font-medium text-2xl">Careers that might interest you</p>
-        <div className="flex items-center text-xl gap-2 mt-3 overflow-x-scroll">
+        <div className="flex items-center text-xl gap-2 mt-4 overflow-x-scroll">
           {[secondCareer, thirdCareer, fourthCareer, fifthCareer].map(
             (career, index) =>
               career && <CourseLabel key={index} career={career} />
@@ -91,9 +91,9 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div>
         <p className="font-medium text-2xl">Popular courses</p>
-        <div className="mt-2 flex flex-row overflow-x-scroll">
+        <div className="mt-4 flex flex-row overflow-x-scroll">
           <div className="text-4xl flex">
             {firstCareer && (
               <CourseCardDash
