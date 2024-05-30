@@ -38,7 +38,7 @@ function CareerMatch() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-mainBgGradientStart via-mainBgGradientMiddle to-mainBgGradientEnd min-h-screen flex flex-col justify-center items-center p-6">
+    <div className="bg-gradient-to-b from-mainBgGradientStart via-mainBgGradientMiddle to-mainBgGradientEnd h-screen flex flex-col justify-center items-center p-6">
       <img src="/img-career-match.png" alt="Logo" className="mb-6" />
       <div className="text-center text-white">
         <h1 className="text-3xl font-semibold">

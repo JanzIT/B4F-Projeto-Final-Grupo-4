@@ -30,7 +30,7 @@ const Login = () => {
 
   return (
     <div
-      className="flex min-h-full flex-1 flex-col justify-center px-6 pb-10 pt-14 lg:px-8 
+      className="flex h-screen flex-1 flex-col justify-center px-6 pt-14 lg:px-8 
     bg-gradient-to-b from-mainBgGradientStart via-mainBgGradientMiddle to-mainBgGradientEnd"
     >
       <div className="m:mx-auto sm:w-full sm:max-w-sm">
@@ -112,7 +112,6 @@ const Login = () => {
               {/* <button type="submit" className={styles.button}>
               Login
             </button> */}
-
             </div>
           </div>
 
