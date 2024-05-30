@@ -34,7 +34,7 @@ const Login = () => {
     bg-gradient-to-b from-mainBgGradientStart via-mainBgGradientMiddle to-mainBgGradientEnd"
     >
       <div className="m:mx-auto sm:w-full sm:max-w-sm">
-        <img className="mx-auto w-auto" src="/img-login.png" alt="Logo" />
+        <img className="mx-auto h-40 " src="/img-logo.png" alt="Logo" />
         <h1 className="text-white font-semibold text-[26px] tracking-tight mb-5 mt-8">
           Start your tech career journey.{" "}
           <span className=" font-bold bg-gradient-to-tl from-purple-700 to-orange-400 bg-clip-text text-transparent">
