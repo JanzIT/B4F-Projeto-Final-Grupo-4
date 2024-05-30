@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Streak = () => {
@@ -16,9 +15,7 @@ const Streak = () => {
         <p className="text-white text-2xl mb-2">
           Your streak is: {streakDays} days
         </p>
-        <p className="text-white mb-6">
-          Come back tomorrow to keep your progress.
-        </p>
+        <p className="text-white mb-6">Keep it up tomorrow!</p>
         <div className="flex justify-between text-white mb-2">
           <span className="day-circle">S</span>
           <span className="day-circle">M</span>
