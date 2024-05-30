@@ -39,7 +39,11 @@ function Dashboard() {
   const [firstCareer, secondCareer, thirdCareer, fourthCareer, fifthCareer] =
     careerSuggestions;
 
-  const backgroundImages = ["cardbgimg1.png", "cardbgimg2.png"];
+  const backgroundImages = [
+    "cardbgimg1.png",
+    "cardbgimg2.png",
+    "cardbgimg3.png",
+  ]; // Adicionando a terceira imagem de fundo
 
   return (
     <div className="text-white bg-slate-950 p-6">
@@ -62,7 +66,7 @@ function Dashboard() {
             placeholder="Search..."
           />
         </div>
-        <p className="mb-4 mt-8 ">This career is an 80% match for you.</p>
+        <p className="mb-4 mt-8">This career is an 80% match for you.</p>
       </div>
 
       {firstCareer && (
@@ -83,7 +87,7 @@ function Dashboard() {
 
       <div className="mt-8 mb-8">
         <p className="font-medium text-2xl">Careers that might interest you</p>
-        <div className="flex items-center text-xl gap-2 mt-4 overflow-x-scroll">
+        <div className="flex items-center text-xl gap-2 mt-4 overflow-x-scroll ">
           {[secondCareer, thirdCareer, fourthCareer, fifthCareer].map(
             (career, index) =>
               career && <CourseLabel key={index} career={career} />
@@ -93,7 +97,7 @@ function Dashboard() {
 
       <div>
         <p className="font-medium text-2xl">Popular courses</p>
-        <div className="mt-4 flex flex-row overflow-x-scroll">
+        <div className="mt-4 flex flex-row overflow-x-scroll ">
           <div className="text-4xl flex">
             {firstCareer && (
               <CourseCardDash
@@ -105,6 +109,12 @@ function Dashboard() {
               <CourseCardDash
                 career={secondCareer}
                 backgroundImage={backgroundImages[1]}
+              />
+            )}
+            {thirdCareer && (
+              <CourseCardDash
+                career={thirdCareer}
+                backgroundImage={backgroundImages[2]}
               />
             )}
           </div>
