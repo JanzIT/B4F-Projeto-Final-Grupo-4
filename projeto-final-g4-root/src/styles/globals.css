@@ -55,3 +55,20 @@
   border-radius: 50%;
   font-weight: bold;
 }
+
+/* Estilização da barra de rolagem no desktop */
+/* Estilos específicos para a barra de rolagem no WebKit (Chrome, Safari) */
+/* Torna a barra de rolagem visível apenas no desktop */
+@media only screen and (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 2px; /* Largura da barra de rolagem */
+    height: 5px;
+  }
+
+  /* Estilização da alça da barra de rolagem */
+  /* Define a aparência da alça da barra de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 253, 253); /* Cor da alça da barra de rolagem */
+    border-radius: 10px; /* Arredonda as bordas da alça da barra de rolagem */
+  }
+}
