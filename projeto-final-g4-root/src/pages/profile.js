@@ -11,28 +11,31 @@ const Profile = () => {
   const [userName, setUserName] = useState("");
   const [firstCareer, setFirstCareer] = useState(null);
   const [profileImage, setProfileImage] = useState("");
-
+console.log({user})
   useEffect(() => {
     const fetchData = async () => {
+      if (user && user._id){
       try {
-        const response = await fetch("/api/user");
+        const response = await fetch(`/api/user/${user._id}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
-        setUserName(data.userName);
+        console.log({data})
+        setUser(data.user);
+        setUserName(data.user.name);
         setFirstCareer(data.careerSuggestions[0]); // Acessa diretamente o primeiro elemento do array
         setProfileImage(data.profileImage);
       } catch (error) {
         console.error("Error fetching user data:", error);
-      }
+      }}
     };
 
     fetchData();
-  }, []);
+  }, [user?._id]);
 
   return (
-    <div style={{ backgroundColor: "#1f2937" }} className="text-white p-6">
+    <div className="bg-slate-950 text-white p-6">
       <div className="flex justify-between mt-8 mb-6">
         <div className="">
           <h1 className="text-3xl font-semibold mb-2">Hi, {userName}</h1>
@@ -51,6 +54,7 @@ const Profile = () => {
       <ProfileSkills />
 
       <NavBar />
+      <div className="h-14 w-11/12"></div>
     </div>
   );
 };
