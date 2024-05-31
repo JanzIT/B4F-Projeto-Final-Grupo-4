@@ -1,0 +1,483 @@
+{
+    "_id": {
+        "$oid": "6659b94f613815ea44c13169"
+    },
+    "name": "olaola",
+    "email": "olaola@olaola.com",
+    "password": "$2b$10$4h7GbzX/3T84QbFY.d712uVvKFNtml3xHAenjBSzRPmhr7k.0Vcwy",
+    "userSkills": {
+        "generalSkills": [
+            "Risk Management",
+            "Data Interpretation",
+            "Project Management",
+            "Communication",
+            "Team Collaboration",
+            "Stress Management",
+            "Presentation",
+            "Attention to Detail",
+            "Technical Support"
+        ],
+        "careerSkills": []
+    },
+    "scoreAcquiredSkills": null,
+    "chosenCareer": {
+        "_id": {
+            "$oid": "665476ff080ada68d41ba4bb"
+        },
+        "careerName": "Cybersecurity Specialist",
+        "careerDescription": "Protects computer systems and networks from cyber threats, implementing security measures to safeguard sensitive information.",
+        "scoreAcquiredSkills": null,
+        "careerGeneralSkills": [
+            "Ethical Judgment",
+            "Risk Management",
+            "Technical Support",
+            "Documentation",
+            "Stress Management",
+            "Problem-Solving",
+            "Analytical Thinking",
+            "Adaptability",
+            "Team Collaboration",
+            "Communication"
+        ],
+        "careerPlan": {
+            "essentials": [
+                {
+                    "name": "Introduction to Cybersecurity",
+                    "checked": false
+                },
+                {
+                    "name": "Network Security Fundamentals",
+                    "checked": false
+                },
+                {
+                    "name": "Cryptography Basics",
+                    "checked": false
+                }
+            ],
+            "intermediate": [
+                {
+                    "name": "Ethical Hacking",
+                    "checked": false
+                },
+                {
+                    "name": "Security Tools and Techniques",
+                    "checked": false
+                },
+                {
+                    "name": "Incident Response",
+                    "checked": false
+                }
+            ],
+            "advanced": [
+                {
+                    "name": "Advanced Threat Detection",
+                    "checked": false
+                },
+                {
+                    "name": "Security Governance",
+                    "checked": false
+                },
+                {
+                    "name": "Digital Forensics",
+                    "checked": false
+                }
+            ]
+        },
+        "course": {
+            "rating": {
+                "$numberDouble": "4.7"
+            },
+            "classHours": {
+                "$numberInt": "150"
+            },
+            "price": "$140"
+        },
+        "affinity": {
+            "$numberInt": "5"
+        }
+    },
+    "careerSuggestions": [
+        {
+            "_id": {
+                "$oid": "665476ff080ada68d41ba4bb"
+            },
+            "careerName": "Cybersecurity Specialist",
+            "careerDescription": "Protects computer systems and networks from cyber threats, implementing security measures to safeguard sensitive information.",
+            "scoreAcquiredSkills": null,
+            "careerGeneralSkills": [
+                "Ethical Judgment",
+                "Risk Management",
+                "Technical Support",
+                "Documentation",
+                "Stress Management",
+                "Problem-Solving",
+                "Analytical Thinking",
+                "Adaptability",
+                "Team Collaboration",
+                "Communication"
+            ],
+            "careerPlan": {
+                "essentials": [
+                    {
+                        "name": "Introduction to Cybersecurity",
+                        "checked": false
+                    },
+                    {
+                        "name": "Network Security Fundamentals",
+                        "checked": false
+                    },
+                    {
+                        "name": "Cryptography Basics",
+                        "checked": false
+                    }
+                ],
+                "intermediate": [
+                    {
+                        "name": "Ethical Hacking",
+                        "checked": false
+                    },
+                    {
+                        "name": "Security Tools and Techniques",
+                        "checked": false
+                    },
+                    {
+                        "name": "Incident Response",
+                        "checked": false
+                    }
+                ],
+                "advanced": [
+                    {
+                        "name": "Advanced Threat Detection",
+                        "checked": false
+                    },
+                    {
+                        "name": "Security Governance",
+                        "checked": false
+                    },
+                    {
+                        "name": "Digital Forensics",
+                        "checked": false
+                    }
+                ]
+            },
+            "course": {
+                "rating": {
+                    "$numberDouble": "4.7"
+                },
+                "classHours": {
+                    "$numberInt": "150"
+                },
+                "price": "$140"
+            },
+            "affinity": {
+                "$numberInt": "5"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "66548c5a080ada68d424c566"
+            },
+            "careerName": "IT Project Manager",
+            "careerDescription": "Manages IT projects from planning to implementation, ensuring deadlines and requirements are met.",
+            "scoreAcquiredSkills": null,
+            "careerGeneralSkills": [
+                "Project Management",
+                "Time Management",
+                "Communication",
+                "Team Collaboration",
+                "Leadership",
+                "Risk Management",
+                "Stakeholder Management",
+                "Documentation",
+                "Adaptability",
+                "Problem-Solving"
+            ],
+            "careerPlan": {
+                "essentials": [
+                    {
+                        "name": "Project Management Fundamentals",
+                        "checked": false
+                    },
+                    {
+                        "name": "Stakeholder Analysis",
+                        "checked": false
+                    },
+                    {
+                        "name": "Risk Assessment",
+                        "checked": false
+                    }
+                ],
+                "intermediate": [
+                    {
+                        "name": "Agile Methodologies",
+                        "checked": false
+                    },
+                    {
+                        "name": "Resource Allocation",
+                        "checked": false
+                    },
+                    {
+                        "name": "Quality Assurance",
+                        "checked": false
+                    }
+                ],
+                "advanced": [
+                    {
+                        "name": "Strategic Planning",
+                        "checked": false
+                    },
+                    {
+                        "name": "Change Management",
+                        "checked": false
+                    },
+                    {
+                        "name": "Advanced Project Management Tools",
+                        "checked": false
+                    }
+                ]
+            },
+            "course": {
+                "rating": {
+                    "$numberDouble": "4.9"
+                },
+                "classHours": {
+                    "$numberInt": "180"
+                },
+                "price": "$140"
+            },
+            "affinity": {
+                "$numberInt": "4"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "66548d0e080ada68d4251579"
+            },
+            "careerName": "Cloud Security Engineer",
+            "careerDescription": "Protects cloud computing infrastructures against cyber threats by implementing security measures.",
+            "scoreAcquiredSkills": null,
+            "careerGeneralSkills": [
+                "Cloud Security",
+                "Analytical Thinking",
+                "Adaptability",
+                "Risk Management",
+                "Technical Support",
+                "Documentation",
+                "Team Collaboration",
+                "Communication",
+                "Ethical Judgment",
+                "Problem-Solving"
+            ],
+            "careerPlan": {
+                "essentials": [
+                    {
+                        "name": "Cloud Security Fundamentals",
+                        "checked": false
+                    },
+                    {
+                        "name": "Cybersecurity Best Practices",
+                        "checked": false
+                    },
+                    {
+                        "name": "Risk Assessment",
+                        "checked": false
+                    }
+                ],
+                "intermediate": [
+                    {
+                        "name": "Security Architecture",
+                        "checked": false
+                    },
+                    {
+                        "name": "Penetration Testing",
+                        "checked": false
+                    },
+                    {
+                        "name": "Incident Response",
+                        "checked": false
+                    }
+                ],
+                "advanced": [
+                    {
+                        "name": "Encryption Techniques",
+                        "checked": false
+                    },
+                    {
+                        "name": "Security Compliance",
+                        "checked": false
+                    },
+                    {
+                        "name": "Cloud Security Certification Preparation",
+                        "checked": false
+                    }
+                ]
+            },
+            "course": {
+                "rating": {
+                    "$numberDouble": "4.8"
+                },
+                "classHours": {
+                    "$numberInt": "170"
+                },
+                "price": "$140"
+            },
+            "affinity": {
+                "$numberInt": "4"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "66548f90080ada68d4262d8a"
+            },
+            "careerName": "Cloud Security Engineer",
+            "careerDescription": "Protects cloud computing infrastructures against cyber threats by implementing security measures.",
+            "scoreAcquiredSkills": null,
+            "careerGeneralSkills": [
+                "Cloud Security",
+                "Analytical Thinking",
+                "Adaptability",
+                "Risk Management",
+                "Technical Support",
+                "Documentation",
+                "Team Collaboration",
+                "Communication",
+                "Ethical Judgment",
+                "Problem-Solving"
+            ],
+            "careerPlan": {
+                "essentials": [
+                    {
+                        "name": "Cloud Security Fundamentals",
+                        "checked": false
+                    },
+                    {
+                        "name": "Cybersecurity Best Practices",
+                        "checked": false
+                    },
+                    {
+                        "name": "Risk Assessment",
+                        "checked": false
+                    }
+                ],
+                "intermediate": [
+                    {
+                        "name": "Security Architecture",
+                        "checked": false
+                    },
+                    {
+                        "name": "Penetration Testing",
+                        "checked": false
+                    },
+                    {
+                        "name": "Incident Response",
+                        "checked": false
+                    }
+                ],
+                "advanced": [
+                    {
+                        "name": "Encryption Techniques",
+                        "checked": false
+                    },
+                    {
+                        "name": "Security Compliance",
+                        "checked": false
+                    },
+                    {
+                        "name": "Cloud Security Certification Preparation",
+                        "checked": false
+                    }
+                ]
+            },
+            "course": {
+                "rating": {
+                    "$numberDouble": "4.8"
+                },
+                "classHours": {
+                    "$numberInt": "170"
+                },
+                "price": "$140"
+            },
+            "affinity": {
+                "$numberInt": "4"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "66547588080ada68d41b07c0"
+            },
+            "careerName": "Business Analyst",
+            "careerDescription": "Desenvolve a interface do usuário de aplicações web.",
+            "scoreAcquiredSkills": {
+                "$numberInt": "80"
+            },
+            "careerGeneralSkills": [
+                "Critical Thinking",
+                "Problem-Solving",
+                "Creativity",
+                "Communication",
+                "Analytical Thinking",
+                "Adaptability",
+                "Research Skills",
+                "Team Collaboration",
+                "Attention to Detail",
+                "Ethical Judgment"
+            ],
+            "careerPlan": {
+                "essentials": [
+                    {
+                        "name": "Business Analysis Fundamentals",
+                        "checked": false
+                    },
+                    {
+                        "name": "Requirements Gathering Techniques",
+                        "checked": false
+                    },
+                    {
+                        "name": "Process Flow Diagrams",
+                        "checked": false
+                    }
+                ],
+                "intermediate": [
+                    {
+                        "name": "SWOT Analysis and Stakeholder Analysis",
+                        "checked": false
+                    },
+                    {
+                        "name": "Business Modeling Tools",
+                        "checked": false
+                    },
+                    {
+                        "name": "Agile Methodologies",
+                        "checked": false
+                    }
+                ],
+                "advanced": [
+                    {
+                        "name": "Project Management",
+                        "checked": false
+                    },
+                    {
+                        "name": "Business Intelligence and Data Analysis",
+                        "checked": false
+                    },
+                    {
+                        "name": "ERP Tools",
+                        "checked": false
+                    }
+                ]
+            },
+            "course": {
+                "rating": {
+                    "$numberDouble": "4.7"
+                },
+                "classHours": {
+                    "$numberInt": "140"
+                },
+                "price": "€ 200"
+            },
+            "affinity": {
+                "$numberInt": "3"
+            }
+        }
+    ]
+}

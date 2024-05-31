@@ -6,11 +6,18 @@ import CourseLabel from "@/components/DashBoard.js/CourseLabel";
 import withAuth from "@/components/Auth/withAuth";
 import { useUser } from "@/hooks/useUser";
 import Streak from "@/components/Common/Streak";
+import Modal from "react-modal";
+import { useRouter } from "next/router";
+
+Modal.setAppElement("#__next");
 
 function Dashboard() {
   const [userName, setUserName] = useState("");
   const [careerSuggestions, setCareerSuggestions] = useState([]);
+  const [selectedCareer, setSelectedCareer] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { user, setUser } = useUser();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -43,7 +50,37 @@ function Dashboard() {
     "cardbgimg1.png",
     "cardbgimg2.png",
     "cardbgimg3.png",
-  ]; // Adicionando a terceira imagem de fundo
+  ];
+
+  const handleCareerClick = (career) => {
+    setSelectedCareer(career);
+    setIsModalOpen(true);
+  };
+
+  const handleConfirmCareer = async () => {
+    try {
+      const response = await fetch('/api/setChosenCareer', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: user._id,
+          career: selectedCareer,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to set chosen career');
+      }
+
+      const updatedUser = await response.json();
+      setUser(updatedUser);
+      router.push('/career');
+    } catch (error) {
+      console.error("Error setting chosen career:", error);
+    }
+  };
 
   return (
     <div className="text-white bg-slate-950 p-6">
@@ -70,7 +107,10 @@ function Dashboard() {
       </div>
 
       {firstCareer && (
-        <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-3xl px-4 py-4 flex flex-row items-center justify-center h-40">
+        <div
+          onClick={() => handleCareerClick(firstCareer)}
+          className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-3xl px-4 py-4 flex flex-row items-center justify-center h-40 cursor-pointer"
+        >
           <div className="flex flex-row items-center p-2">
             <div className="mx-4">
               <h3 className="text-4xl font-semibold mb-2">
@@ -87,17 +127,25 @@ function Dashboard() {
 
       <div className="mt-8 mb-8">
         <p className="font-medium text-2xl">Careers that might interest you</p>
-        <div className="flex items-center text-xl gap-2 mt-4 overflow-x-scroll ">
+        <div className="flex items-center text-xl gap-2 mt-4 overflow-x-scroll">
           {[secondCareer, thirdCareer, fourthCareer, fifthCareer].map(
             (career, index) =>
-              career && <CourseLabel key={index} career={career} />
+              career && (
+                <div
+                  key={index}
+                  onClick={() => handleCareerClick(career)}
+                  className="cursor-pointer"
+                >
+                  <CourseLabel career={career} />
+                </div>
+              )
           )}
         </div>
       </div>
 
       <div>
         <p className="font-medium text-2xl">Popular courses</p>
-        <div className="mt-4 flex flex-row overflow-x-scroll ">
+        <div className="mt-4 flex flex-row overflow-x-scroll">
           <div className="text-4xl flex">
             {firstCareer && (
               <CourseCardDash
@@ -125,8 +173,8 @@ function Dashboard() {
         <Streak />
       </div>
 
-      <div className="bg-gradient-to-br from-amber-700 to-rose-700 mt-10 my-10 flex flex-row items-center justify-center rounded-3xl p-3 ">
-        <div className="">
+      <div className="bg-gradient-to-br from-amber-700 to-rose-700 mt-10 my-10 flex flex-row items-center justify-center rounded-3xl p-3">
+        <div>
           <p className="text-3xl font-semibold">You're on fire!</p>
           <p className="text-lg font-medium">5 Days Challenge</p>
         </div>
@@ -135,6 +183,30 @@ function Dashboard() {
       </div>
       <NavBar />
       <div className="h-14 w-11/12"></div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        contentLabel="Confirm Career Choice"
+        className="bg-white rounded-lg p-6 w-96 mx-auto mt-20"
+      >
+        <h2 className="text-2xl font-semibold mb-4">Confirm Career Choice</h2>
+        <p className="mb-4">Do you want to choose this Career Path?</p>
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className="bg-gray-300 px-4 py-2 rounded-md mr-2"
+          >
+            No
+          </button>
+          <button
+            onClick={handleConfirmCareer}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Yes
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
