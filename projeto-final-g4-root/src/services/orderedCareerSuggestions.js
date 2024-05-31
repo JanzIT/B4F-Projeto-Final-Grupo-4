@@ -13,6 +13,7 @@ export async function findCorrelatedCareers(user) {
   const orderedCareers = careersWithAffinity.slice(0, 5);
 
   await updateCareerSuggestions(user._id, orderedCareers);
+  await setDefaultUserSuggestedCareer(user._id, orderedCareers);
 
   return orderedCareers;
 }
@@ -30,5 +31,14 @@ async function updateCareerSuggestions(userId, careerSuggestions) {
   await collection.updateOne(
     { _id: new ObjectId(userId) },
     { $set: { careerSuggestions } }
+  );
+}
+
+async function setDefaultUserSuggestedCareer(userId, orderedCareers) {
+  const collection = await getMongoCollection("DBtest", "users");
+  const defaultCareer = orderedCareers[0];
+  await collection.updateOne(
+    { _id: new ObjectId(userId) },
+    { $set: { chosenCareer: defaultCareer } }
   );
 }
