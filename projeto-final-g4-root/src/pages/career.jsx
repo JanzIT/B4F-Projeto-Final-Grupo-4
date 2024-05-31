@@ -65,6 +65,7 @@ function Career() {
       </div>
 
       <NavBar />
+      <div className="h-20 w-11/12"></div>
     </div>
   );
 }
