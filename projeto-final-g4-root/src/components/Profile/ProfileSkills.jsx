@@ -47,14 +47,12 @@
 
 // export default ProfileSkills;
 
-
 import React, { useState, useEffect } from "react";
 import { useUser } from "@/hooks/useUser";
 
 const ProfileSkills = () => {
   const { user } = useUser();
   const [skills, setSkills] = useState([]);
-  const [selectedSkills, setSelectedSkills] = useState([]);
 
   useEffect(() => {
     const fetchUserSkills = async () => {
@@ -62,9 +60,15 @@ const ProfileSkills = () => {
         try {
           const response = await fetch(`/api/user/${user._id}`);
           const data = await response.json();
-          if (data.user && data.user.userSkills && data.user.userSkills.generalSkills) {
-            setSkills(data.user.userSkills.generalSkills);
-            setSelectedSkills(data.user.userSkills.generalSkills); // Assuming all skills should be selected initially
+          if (
+            data.user &&
+            data.user.userSkills &&
+            (data.user.userSkills.generalSkills ||
+              data.user.userSkills.careerSkills)
+          ) {
+            const careerSkills = data.user.userSkills.careerSkills
+            const generalSkills = data.user.userSkills.generalSkills
+            setSkills([...generalSkills, ...careerSkills]);
           }
         } catch (error) {
           console.error("Error fetching user skills:", error);
@@ -93,7 +97,7 @@ const ProfileSkills = () => {
             type="checkbox"
             id={skill}
             className="mr-4 custom-checkbox"
-            checked={selectedSkills.includes(skill)}
+            checked={skills.includes(skill)}
             disabled
           />
           <label htmlFor={skill} className="text-lg">

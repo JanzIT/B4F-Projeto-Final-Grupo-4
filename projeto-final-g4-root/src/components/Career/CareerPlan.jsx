@@ -43,54 +43,37 @@ const CareerPlan = () => {
     fetchCareerPlan();
   }, [user]);
 
-  // Função para manipular a seleção de habilidades
-  // const toggleSkill = (category, index) => {
-  //   setCareerPlan((prevData) => {
-  //     const updatedSkills = prevData[category].map((skill, i) =>
-  //       i === index ? { ...skill, checked: !skill.checked } : skill
-  //     );
+  console.log({user})
 
-  //     const updatedCareerData = {
-  //       ...prevData,
+  const addSkill = async (level, index, isChecked) => {
+    if (!isChecked) {
+      return;
+    }
 
-  //       [category]: updatedSkills,
-  //     };
-
-  //     // Atualizar o estado do usuário
-  //     const selectedSkill = updatedSkills[index];
-  //     setUserData((prevUserData) => {
-  //       let newSkills;
-  //       if (selectedSkill.checked) {
-  //         // Adicionar a habilidade se não estiver na lista
-  //         if (!prevUserData.skills.includes(selectedSkill.name)) {
-  //           newSkills = [...prevUserData, selectedSkill.name];
-  //         } else {
-  //           newSkills = prevUserData;
-  //         }
-  //       } else {
-  //         // Remover a habilidade se estiver na lista
-  //         newSkills = prevUserData.filter(
-  //           (skill) => skill !== selectedSkill.name
-  //         );
-  //       }
-
-  //       return {
-  //         ...prevUserData,
-  //         newSkills,
-  //       };
-  //     });
-
-  //     return updatedCareerData;
-  //   });
-  // };
-
-  const toggleSkill = (level, index) => {
     const updatedData = { ...careerPlan };
-    updatedData[level][index].checked = !updatedData[level][index].checked;
-    setCareerPlan(updatedData);
+    updatedData[level][index].checked = true;
 
-    // Fazer requisiçao ao backend para salvar as skills, usando fetch e método POST
-};
+    const response = await fetch("/api/updateCareerSkills", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: user._id,
+        selectedSkill: updatedData[level][index],
+        level,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to set chosen career");
+    }
+
+    const updatedUser = await response.json();
+
+    setUser(updatedUser.user);
+    setCareerPlan(updatedData);
+  };
 
   // Renderizar lista de habilidades com checkboxes
   const renderSkillsList = (category) => (
@@ -105,7 +88,8 @@ const CareerPlan = () => {
             id={`${category}-${index}`}
             className="mr-4 custom-checkbox"
             checked={skill.checked}
-            onChange={() => toggleSkill(category, index)}
+            disabled={skill.checked}
+            onChange={(e) => addSkill(category, index, e.target.checked)}
           />
           <label htmlFor={`${category}-${index}`} className="text-l">
             {skill.name}
@@ -140,7 +124,7 @@ const CareerPlan = () => {
       {renderSkillsList("advanced")}
 
       {/* A LISTA DE USER SKILLS DEVE SER DIRECIONADA PARA ProfileSkills */}
-      <h2 className="text-xl font-medium mb-2 mt-4">User Skills</h2>
+
       <ul>
         {userData.skills.map((skill, index) => (
           <li key={index}>{skill}</li>

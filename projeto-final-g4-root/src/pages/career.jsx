@@ -59,7 +59,7 @@ function Career() {
       <CareerPlan />
       </div> 
 
-      <div className="mt-7">
+      <div className="mt-1">
         <p className="text-2xl mb-3">Recommended course</p>
         <CourseCardCareer career={chosenCareer} />
       </div>
