@@ -108,7 +108,7 @@ const CareerPlan = () => {
   }
 
   return (
-    <div className="text-white bg-neutral-900 rounded-[22.51px] p-10">
+    <div className="text-white bg-neutral-900 rounded-3xl p-10">
       <img
         src="/img-career-plan.svg"
         alt="Logo"

@@ -32,13 +32,17 @@ function Career() {
     return <div>Loading...</div>;
   }
 
+  const navigateToCourse = () => {
+    router.push("/course");
+  };
+
   return (
     <div className="bg-slate-950 p-6 min-h-screen text-white">
       <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl h-52 flex flex-row items-center justify-center p-4">
         <div className="flex flex-row items-center">
           <div>
             <p className="text-lg">You are migrating to</p>
-            <h1 className="text-5xl font-semibold mb-4">
+            <h1 className="text-3xl font-semibold mb-4">
               {chosenCareer?.careerName || "Loading..."}
             </h1>
           </div>
@@ -56,12 +60,13 @@ function Career() {
       </div>
 
       <div className="min-h-screen text-white">
-      <CareerPlan />
-      </div> 
+        <CareerPlan />
+      </div>
 
-      <div className="mt-1">
+      <div className="">
         <p className="text-2xl mb-3">Recommended course</p>
-        <CourseCardCareer career={chosenCareer} />
+        <CourseCardCareer career={chosenCareer} 
+        onClick={navigateToCourse} />
       </div>
 
       <NavBar />
@@ -72,22 +77,26 @@ function Career() {
 
 export default Career;
 
-{/* 
+{
+  /* 
       <div className="min-h-screen text-white">
           <div className="">
             <CareerPlan />
           </div>
         
-      </div> */}
+      </div> */
+}
 
-      {/* <div className="mt-7">
+{
+  /* <div className="mt-7">
         <p className="text-2xl mb-3">Recommended course</p>
         <CourseCardCareer career={chosenCareer} />
       </div>
 
       <div className="h-14 bg-orange-900">sdf</div>
 
-      <NavBar /> */}
+      <NavBar /> */
+}
 //     </div>
 //   );
 // }
