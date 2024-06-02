@@ -88,6 +88,7 @@ function Dashboard() {
         <div>
           <h1 className="text-3xl font-semibold mb-4">Hi, {userName}</h1>
           <h2 className="font-medium text-2xl">Find your new career</h2>
+          
         </div>
         <div className="h-20 mb-2">
           <img src="/img-profile.png" alt="profile" className="mb-6" />
@@ -188,20 +189,22 @@ function Dashboard() {
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="Confirm Career Choice"
-        className="bg-white rounded-lg p-6 w-96 mx-auto mt-20"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        className="bg-slate-900 text-white rounded-lg focus:outline-none
+        p-6 w-96 mx-auto"
       >
         <h2 className="text-2xl font-semibold mb-4">Confirm Career Choice</h2>
         <p className="mb-4">Do you want to choose this Career Path?</p>
         <div className="flex justify-end">
           <button
             onClick={() => setIsModalOpen(false)}
-            className="bg-gray-300 px-4 py-2 rounded-md mr-2"
+            className="bg-gray-600 px-6 py-2 rounded-md mr-2"
           >
             No
           </button>
           <button
             onClick={handleConfirmCareer}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md"
+            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-md"
           >
             Yes
           </button>
