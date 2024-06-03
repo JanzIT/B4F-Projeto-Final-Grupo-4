@@ -96,7 +96,7 @@ function Dashboard() {
           
         </div>
         <div className="h-20 mb-2">
-          <img src="/img-profile.png" alt="profile" className="mb-6" />
+          <img src="/profile.webp" alt="profile" className="mb-6 h-20" />
         </div>
       </div>
 
@@ -179,15 +179,14 @@ function Dashboard() {
         <Streak />
       </div>
 
-      <div className="bg-gradient-to-br from-amber-700 to-rose-700 mt-10 my-10 flex flex-row items-center justify-center rounded-3xl p-3">
+      <div className="bg-gradient-to-br from-amber-700 to-rose-700 mt-10 my-10 flex flex-row items-center justify-center rounded-3xl p-5">
         <div>
-          <p className="text-3xl font-semibold">You're on fire!</p>
+          <p className="text-3xl font-semibold">Ignite your potential!</p>
           <p className="text-lg font-medium">5 Days Challenge</p>
         </div>
 
         <img src="/img-chalenge.png" alt="Challenge" className="" />
       </div>
-        <button className="bg-red-600 text-white px-4 py-2 rounded" onClick={handleLogout}>Logout</button>
       <NavBar />
       <div className="h-14 w-11/12"></div>
 

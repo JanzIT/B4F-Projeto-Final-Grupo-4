@@ -31,7 +31,7 @@ const ScoreAcquiredSkills = ({ progress, learningHours }) => {
 
           {/* Divider and additional stats */}
 
-          <div className="w-full mt-10 p-4">
+          <div className="w-full mt-6 p-4">
             <div className="flex justify-between items-center text-white mb-2">
               <span>Challenge Resolution</span>
               <span>72%</span>

@@ -7,7 +7,7 @@ export default function Button({onClick, label}) {
           className="w-full mt-6 h-14 
           rounded-[24px]
           bg-gradient-to-r from-purple-600 to-indigo-600
-           text-white text-lg font-semibold"
+           text-white text-lg font-semibold focus:outline-none"
           onClick={onClick}
         >
 {label}        

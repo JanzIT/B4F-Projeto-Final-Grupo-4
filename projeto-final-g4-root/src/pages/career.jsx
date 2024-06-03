@@ -37,12 +37,12 @@ function Career() {
   };
 
   return (
-    <div className="bg-slate-950 p-6 min-h-screen text-white">
-      <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl h-52 flex flex-row items-center justify-center p-4">
+    <div className="bg-slate-950 p-8 min-h-screen text-white">
+      <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl h-50 flex flex-row items-center justify-center p-4">
         <div className="flex flex-row items-center">
           <div>
             <p className="text-lg">You are migrating to</p>
-            <h1 className="text-3xl font-semibold mb-4">
+            <h1 className="text-3xl font-semibold">
               {chosenCareer?.careerName || "Loading..."}
             </h1>
           </div>
@@ -52,7 +52,7 @@ function Career() {
         </div>
       </div>
 
-      <div className="text-white mt-7 mb-7">
+      <div className="text-white mt-4 mb-4 p-2">
         <p className="text-2xl font-semibold">Career Overview</p>
         <p>
           {chosenCareer?.careerDescription || "Loading career description..."}
@@ -63,11 +63,11 @@ function Career() {
         <CareerPlan />
       </div>
 
-      <div className="">
+  
         <p className="text-2xl mb-3">Recommended course</p>
         <CourseCardCareer career={chosenCareer} 
         onClick={navigateToCourse} />
-      </div>
+      
 
       <NavBar />
       <div className="h-20 w-11/12"></div>
@@ -77,28 +77,3 @@ function Career() {
 
 export default Career;
 
-{
-  /* 
-      <div className="min-h-screen text-white">
-          <div className="">
-            <CareerPlan />
-          </div>
-        
-      </div> */
-}
-
-{
-  /* <div className="mt-7">
-        <p className="text-2xl mb-3">Recommended course</p>
-        <CourseCardCareer career={chosenCareer} />
-      </div>
-
-      <div className="h-14 bg-orange-900">sdf</div>
-
-      <NavBar /> */
-}
-//     </div>
-//   );
-// }
-
-// export default Career;

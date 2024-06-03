@@ -49,10 +49,10 @@ function CoursePage() {
         <h1 className="text-2xl font-medium">Recommended course</h1>
       </div>
 
-      <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl h-52 flex flex-row items-center justify-center p-4">
+      <div className="bg-gradient-to-t from-indigo-800 to-violet-500 rounded-xl h-50 flex flex-row items-center justify-center p-4">
         <div className="flex flex-row items-center">
           <div>
-            <h1 className="text-5xl font-semibold mb-4">
+            <h1 className="text-4xl font-semibold mb-4">
               {chosenCareer?.careerName || "Loading..."}
             </h1>
           </div>
@@ -69,13 +69,13 @@ function CoursePage() {
       </div> */}
 
 
-      <div className="text-white mt-5 mb-7">
+      <div className="text-white p-4">
         <p className="text-2xl font-semibold">Course Details</p>
         <p>Rating: {chosenCareer.course.rating}</p>
         <p>Class Hours: {chosenCareer.course.classHours} hours</p>
       </div>
 
-      <div className="  text-white mt-6 mb-7">
+      <div className="  text-white mt-4 mb-7">
         <CourseModuleCard title="Essentials" skills={chosenCareer.careerPlan.essentials} />
         <CourseModuleCard title="Intermediate" skills={chosenCareer.careerPlan.intermediate} />
         <CourseModuleCard title="Advanced" skills={chosenCareer.careerPlan.advanced} />

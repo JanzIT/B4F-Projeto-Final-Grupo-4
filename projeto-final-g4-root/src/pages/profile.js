@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Streak from "@/components/Common/streak";
 import ScoreAcquiredSkills from "@/components/Profile/ScoreAcquiredSkills";
 import ProfileSkills from "@/components/Profile/ProfileSkills";
 import NavBar from "@/components/NavBar/NavBar";
 import { useUser } from "@/hooks/useUser";
 import { CiLogout } from "react-icons/ci";
+import Streak from "@/components/Common/Streak";
 
 const Profile = () => {
   const { user, setUser } = useUser();
@@ -18,6 +18,8 @@ const Profile = () => {
   const [learningHours, setLearningHours] = useState(0); // Adicionando estado para learningHours
   const [loading, setLoading] = useState(true); // Estado de carregamento
 
+
+  
   useEffect(() => {
     const fetchData = async () => {
       if (user && user._id) {
@@ -31,7 +33,7 @@ const Profile = () => {
 
           setUser(data.user);
           setUserName(data.user.name);
-          setFirstCareer(data.user.careerSuggestions[0]);
+          setFirstCareer(data.user.chosenCareer);
           setProfileImage(data.profileImage);
 
           const { generalSkills, careerSkills } = data.user.userSkills;
@@ -110,18 +112,18 @@ const Profile = () => {
   }
 
   return (
-    <div className="bg-slate-950 text-white p-6">
+    <div className="bg-slate-950 text-white p-8">
       <div className="flex justify-between mt-8 mb-6">
         <div className="">
           <h1 className="text-3xl font-semibold mb-2">Hi, {userName}</h1>
           <h2>You are migrating to</h2>
-          <span className="text-2xl font-semibold">
+          <span className="text-xl font-semibold">
             {firstCareer && firstCareer.careerName}
           </span>
         </div>
 
         <div className="h-20">
-          <img src="/img-profile.png" alt="profile" className="mb-6" />
+          <img src="/profile.webp" alt="profile" className="mb-6 h-20"  />
         </div>
       </div>
       <Streak />

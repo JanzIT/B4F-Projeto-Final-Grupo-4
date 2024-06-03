@@ -1,4 +1,6 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
+
 
 const CourseCardCareer = ({ career, onClick }) => {
   if (!career || !career.course) {
@@ -7,9 +9,10 @@ const CourseCardCareer = ({ career, onClick }) => {
 
   return (
     <div onClick={onClick} className="bg-card-img bg-cover rounded-2xl h-80 flex flex-col justify-between cursor-pointer">
-      <p className="text-sm text-white pt- mx-4">
-        Rating: {career.course.rating}
-      </p>
+      <div className="flex items-center p-4">
+            <FaStar className="text-yellow-400 mr-1" />
+            <span>{career.course.rating}</span>
+          </div>
       <div className="bg-gray-100 text-gray-900 rounded-3xl h-24 m-4 p-4">
         <p className="text-2xl font-medium">{career.careerName}</p>
         <div className="text-lg flex justify-between mt-1">

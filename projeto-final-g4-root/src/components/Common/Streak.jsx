@@ -2,7 +2,7 @@ import React from "react";
 
 const Streak = () => {
   // Definindo a frequência fictícia do streak
-  const streakDays = 3;
+  const streakDays = 1;
 
   return (
     <div className="bg-neutral-900 rounded-3xl mb-6">
@@ -13,12 +13,12 @@ const Streak = () => {
       </div>
       <div className="pt-4 pb-6 px-6">
         <p className="text-white text-2xl mb-2">
-          Your streak is: {streakDays} days
+          Your streak is: {streakDays} day
         </p>
         <p className="text-white mb-6">Keep it up tomorrow!</p>
         <div className="flex justify-between text-white mb-2">
-          <span className="day-circle">S</span>
-          <span className="day-circle">M</span>
+          <span className="day-circle-empty">S</span>
+          <span className="day-circle-empty">M</span>
           <span className="day-circle">T</span>
           <span className="day-circle-empty">W</span>
           <span className="day-circle-empty">T</span>
