@@ -1,4 +1,4 @@
-//api/orderCareerSuggestions
+//api/updateCareerSkills
 import { insertCareerSkill } from "@/services/careerSkills";
 
 export default async (req, res) => {

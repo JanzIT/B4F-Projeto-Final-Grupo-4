@@ -57,6 +57,11 @@ function Dashboard() {
     setIsModalOpen(true);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Remove o usuário do localStorage
+    router.push("/auth"); // Redireciona para a página de autenticação
+  };
+
   const handleConfirmCareer = async () => {
     try {
       const response = await fetch('/api/setChosenCareer', {
@@ -182,6 +187,7 @@ function Dashboard() {
 
         <img src="/img-chalenge.png" alt="Challenge" className="" />
       </div>
+        <button className="bg-red-600 text-white px-4 py-2 rounded" onClick={handleLogout}>Logout</button>
       <NavBar />
       <div className="h-14 w-11/12"></div>
 

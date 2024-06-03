@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Button from "@/components/Common/Button";
 import withAuth from "@/components/Auth/withAuth"; // Import withAuth
+import { useUser } from "@/hooks/useUser";
 
 const IntroPage = () => {
   const router = useRouter();
+  const { user } = useUser();
+
+  useEffect(() => {
+    // Verifica se o usuário tem habilidades gerais
+    if (user && user.userSkills && user.userSkills.generalSkills && user.userSkills.generalSkills.length > 0) {
+      router.push("/dashboard"); // Redireciona para a página de dashboard se tiver habilidades gerais
+    }
+  }, [user]); // Assumindo que user é a única dependência
 
   const goToUserSkills = () => {
     router.push("/goals"); // Assuming this is the correct route
@@ -33,7 +42,7 @@ const IntroPage = () => {
       <Button
         className="mb-10"
         label="Let's get started!"
-        onClick={() => goToUserSkills()}
+        onClick={goToUserSkills}
       />
     </div>
   );

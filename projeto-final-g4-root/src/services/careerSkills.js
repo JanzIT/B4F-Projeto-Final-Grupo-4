@@ -1,4 +1,4 @@
-// src/services/insertSkillMental.js
+// src/services/careerSkills.
 import { ObjectId } from "mongodb";
 import { getMongoCollection } from "../../data/mongodb";
 

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import withAuth from '@/components/Auth/withAuth'; // Import withAuth
 import { useRouter } from 'next/router'; // Import for routing
+import { useUser } from '@/hooks/useUser';
 
 const GoalsPage = () => {
   const router = useRouter(); // Initialize router
+  const { user } = useUser();
 
   // Define o estado inicial das metas usando o hook useState
   const [goals, setGoals] = useState([
@@ -38,6 +40,13 @@ const GoalsPage = () => {
       // ... implementar lógica de redirecionamento ou aviso
     }
   };
+
+  useEffect(() => {
+    // Verifica se o usuário tem habilidades gerais
+    if (user && user.userSkills && user.userSkills.generalSkills && user.userSkills.generalSkills.length > 0) {
+      router.push("/dashboard");
+    }
+  }, [user]); 
 
   return (
     <div className="GoalsStyles bg-gradient-to-b from-slate-950 to-violet-950 min-h-screen flex flex-col justify-center items-center text-white p-8 ">

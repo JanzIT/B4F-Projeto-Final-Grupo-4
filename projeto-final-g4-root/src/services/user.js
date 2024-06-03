@@ -8,3 +8,4 @@ export async function getUserById(userId) {
   const user = await collection.findOne({ _id: new ObjectId(userId) });
   return user;
 }
+

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Button from "@/components/Common/Button";
 import withAuth from "@/components/Auth/withAuth";
+import { useUser } from "@/hooks/useUser";
 
 function GeneralSkills() {
   // Estado para armazenar os dados do usuário
@@ -58,10 +59,19 @@ function GeneralSkills() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       setUser(user);
+      if (user.userSkills && user.userSkills.generalSkills && user.userSkills.generalSkills.length > 0) {
+        router.push("/dashboard"); // Redireciona para a página de dashboard se tiver habilidades gerais
+      }
     } else {
       router.push("/auth");
     }
   }, [router]);
+
+  useEffect(() => {
+    if (user && user.user.userSkills && user.user.userSkills.generalSkills && user.user.userSkills.generalSkills.length > 0) {
+      router.push("/dashboard");
+    }
+  }, [user, router]);
 
   // Função para alternar o estado de seleção de uma habilidade
   const handleSkillClick = (skills, setSkills, index) => {
@@ -98,19 +108,6 @@ function GeneralSkills() {
       if (!token) {
         throw new Error("Token not found");
       }
-
-      // await axios.post(
-      //   "/api/insertSkillMental",
-      //   {
-      //     selectedSkills: selectedSkills.skills,
-      //     userId: user.user._id,
-      //   },
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //     },
-      //   }
-      // );
 
       // Envia as habilidades selecionadas para o backend
       await axios.post(
@@ -228,3 +225,4 @@ function GeneralSkills() {
 
 // Envolve o componente com autenticação
 export default withAuth(GeneralSkills);
+

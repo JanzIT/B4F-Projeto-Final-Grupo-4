@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardBody, CircularProgress, Chip } from "@nextui-org/react";
 
-const ScoreAcquiredSkills = () => {
+const ScoreAcquiredSkills = ({ progress, learningHours }) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <Card className="w-full max-w-md border-none rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 mb-6 p-4">
@@ -13,10 +13,10 @@ const ScoreAcquiredSkills = () => {
               track: "stroke-white/10",
               value: "text-4xl font-bold text-white",
             }}
-            value={61}
+            value={progress}
             strokeWidth={2}
             showValueLabel={true}
-            aria-label="Acquired skills progress: 60%"
+            aria-label={`Acquired skills progress: ${progress}%`}
             transitionDuration={10000} // Definindo a duração da animação em milissegundos (aqui, 2000ms = 2 segundos)
           />
           <Chip
@@ -26,7 +26,7 @@ const ScoreAcquiredSkills = () => {
             }}
             variant="bordered"
           >
-            Acquired Skills
+           Percentage Of New Acquired Skills
           </Chip>
 
           {/* Divider and additional stats */}
@@ -44,7 +44,7 @@ const ScoreAcquiredSkills = () => {
             <hr className="border-white mb-4"></hr>
             <div className="flex justify-between items-center text-white mb-2">
               <span>Learning Hours Dedicated</span>
-              <span>38h</span>
+              <span>{learningHours}h</span>
             </div>
             <hr className="border-white mb-4"></hr>
           </div>
