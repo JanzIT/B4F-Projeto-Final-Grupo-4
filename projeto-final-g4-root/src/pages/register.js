@@ -56,7 +56,7 @@ const Register = () => {
       flex min-h-full flex-1 flex-col justify-center px-6 py-8 lg:px-8"
     >
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img src="/img-logo.png" alt="Logo" className="mx-auto h-40" />
+        <img src="/img-logo.webp" alt="Logo" className="mx-auto h-40" />
 
         <h1 className="text-white font-semibold text-[26px] tracking-tight mb-4 mt-6">
           Start your tech career journey.{" "}

@@ -84,7 +84,7 @@ const ProfileSkills = () => {
   }
 
   return (
-    <div className="text-white bg-neutral-900 rounded-[22.51px] p-10 mb-16">
+    <div className="text-white bg-neutral-900 rounded-[22.51px] p-10 mb-6">
       <img
         src="/img-profile-skills.svg"
         alt="Logo"
@@ -93,6 +93,7 @@ const ProfileSkills = () => {
       <h1 className="text-2xl font-medium mb-10 text-center">Your Skills</h1>
       {skills.map((skill, index) => (
         <div key={index} className="flex items-center mb-2">
+
           <input
             type="checkbox"
             id={skill}
@@ -100,6 +101,7 @@ const ProfileSkills = () => {
             checked={skills.includes(skill)}
             disabled
           />
+          
           <label htmlFor={skill} className="text-lg">
             {skill}
           </label>

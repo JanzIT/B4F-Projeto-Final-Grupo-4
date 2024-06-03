@@ -45,7 +45,8 @@ function CareerMatch() {
           {firstCareer ? firstCareer.careerName : "Loading..."}
         </h1>
         <p className="mt-6 mb-4 font-semibold text-xl">
-          This career is an 80% match for you.{user}
+        This is the career that suits you best
+{user}
         </p>
       </div>
       <Button label="Let's get started" onClick={goToCareer} />

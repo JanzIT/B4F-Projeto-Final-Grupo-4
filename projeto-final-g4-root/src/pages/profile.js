@@ -5,6 +5,7 @@ import ScoreAcquiredSkills from "@/components/Profile/ScoreAcquiredSkills";
 import ProfileSkills from "@/components/Profile/ProfileSkills";
 import NavBar from "@/components/NavBar/NavBar";
 import { useUser } from "@/hooks/useUser";
+import { CiLogout } from "react-icons/ci";
 
 const Profile = () => {
   const { user, setUser } = useUser();
@@ -23,56 +24,65 @@ const Profile = () => {
         try {
           const response = await fetch(`/api/user/${user._id}`);
           const data = await response.json();
-  
+
           if (!response.ok || !data.user) {
             throw new Error(`Error: ${response.status} ${response.statusText}`);
           }
-  
+
           setUser(data.user);
           setUserName(data.user.name);
           setFirstCareer(data.user.careerSuggestions[0]);
           setProfileImage(data.profileImage);
-  
+
           const { generalSkills, careerSkills } = data.user.userSkills;
           const careerPlan = data.user.chosenCareer.careerPlan;
-  
+
           if (generalSkills && careerSkills && careerPlan) {
-            const allCareerSkills = [...careerPlan.essentials, ...careerPlan.intermediate, ...careerPlan.advanced];
-            const totalCareerSkills = allCareerSkills.filter(skill => skill.checked).length;
-  
+            const allCareerSkills = [
+              ...careerPlan.essentials,
+              ...careerPlan.intermediate,
+              ...careerPlan.advanced,
+            ];
+            const totalCareerSkills = allCareerSkills.filter(
+              (skill) => skill.checked
+            ).length;
+
             let acquiredCareerSkills = 0;
-            allCareerSkills.forEach(skill => {
+            allCareerSkills.forEach((skill) => {
               if (generalSkills.includes(skill.name)) {
                 acquiredCareerSkills++;
               }
             });
-  
+
             // Adiciona 6 horas para cada habilidade em careerSkills
             const totalHours = careerSkills.length * 6;
-  
+
             // Adiciona 6 horas para cada habilidade em data.user.userSkills.careerSkills
-            const updatedCareerSkills = data.user.userSkills.careerSkills.map(skill => {
-              return {
-                ...skill,
-                hours: skill.hours + 6
-              };
-            });
-  
+            const updatedCareerSkills = data.user.userSkills.careerSkills.map(
+              (skill) => {
+                return {
+                  ...skill,
+                  hours: skill.hours + 6,
+                };
+              }
+            );
+
             // Atualiza as horas de aprendizado no estado
             setLearningHours(totalHours);
-  
+
             // Atualiza o estado do usuário com as habilidades atualizadas
             const updatedUser = {
               ...data.user,
               userSkills: {
                 ...data.user.userSkills,
-                careerSkills: updatedCareerSkills
-              }
+                careerSkills: updatedCareerSkills,
+              },
             };
             setUser(updatedUser);
-//            const progressPercentage = (acquiredCareerSkills / totalCareerSkills) * 100;              woulde be correct ==========  BUGGED
-//            const progressPercentage = (generalSkills.length / totalCareerSkills) * 100;              porcentagem em relação ao início(precisamos que passe de 100% no componente)
-              const progressPercentage = (totalCareerSkills / generalSkills.length) * 100             //porcentagem da carreira em relação ao user (quebra galho pois normalmente não chega a 100%)
+            //            const progressPercentage = (acquiredCareerSkills / totalCareerSkills) * 100;              woulde be correct ==========  BUGGED
+            //            const progressPercentage = (generalSkills.length / totalCareerSkills) * 100;              porcentagem em relação ao início(precisamos que passe de 100% no componente)
+            const progressPercentage =
+              (totalCareerSkills / generalSkills.length) * 100; //porcentagem da carreira em relação ao user (quebra galho pois normalmente não chega a 100%)
             setProgress(progressPercentage);
           } else {
             console.error("User skills data not found.");
@@ -86,10 +96,9 @@ const Profile = () => {
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, [user?._id]);
-  
 
   const handleLogout = () => {
     localStorage.removeItem("user"); // Remove o usuário do localStorage
@@ -102,7 +111,6 @@ const Profile = () => {
 
   return (
     <div className="bg-slate-950 text-white p-6">
-      <button className="bg-red-600 text-white px-4 py-2 rounded" onClick={handleLogout}>Logout</button>
       <div className="flex justify-between mt-8 mb-6">
         <div className="">
           <h1 className="text-3xl font-semibold mb-2">Hi, {userName}</h1>
@@ -117,11 +125,30 @@ const Profile = () => {
         </div>
       </div>
       <Streak />
-      <ScoreAcquiredSkills progress={progress} learningHours={learningHours} /> {/* Passando learningHours para o componente */}
+      <ScoreAcquiredSkills
+        progress={progress}
+        learningHours={learningHours}
+      />{" "}
+      {/* Passando learningHours para o componente */}
       <ProfileSkills />
 
-      <NavBar />
-      <div className="h-14 w-11/12"></div>
+      <div className="flex flex-row justify-center">
+
+        <CiLogout className="text-2xl mr-2" />
+        <p onClick={handleLogout}> Logout </p>
+
+      </div>{" "}
+
+      <NavBar className="text-5xl" />
+      <div className="h-20 w-11/12"></div>
+      
+        {/* <button
+          className=" h-12 w-full rounded-3xl 
+ text-white"
+          onClick={handleLogout}
+        >
+          Logout
+        </button> */}
     </div>
   );
 };

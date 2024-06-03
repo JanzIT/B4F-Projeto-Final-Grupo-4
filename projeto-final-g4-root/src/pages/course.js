@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import { useUser } from "@/hooks/useUser";
 import withAuth from "@/components/Auth/withAuth";
 import CourseModuleCard from "@/components/Course/CourseModuleCard";
-import { FaArrowLeft } from 'react-icons/fa';
+import { IoIosArrowBack } from "react-icons/io";
+
 
 
 function CoursePage() {
@@ -43,7 +44,7 @@ function CoursePage() {
       <div className="flex items-center mb-6">
 
       <button onClick={backToCareer} className="mr-4">
-          <FaArrowLeft className="text-white text-2xl"/>
+          <IoIosArrowBack  className="text-white text-2xl"/>
         </button>
         <h1 className="text-2xl font-medium">Recommended course</h1>
       </div>
