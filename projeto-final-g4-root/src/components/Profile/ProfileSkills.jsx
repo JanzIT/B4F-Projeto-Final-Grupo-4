@@ -80,7 +80,7 @@ const ProfileSkills = () => {
   }, [user]);
 
   if (!user || skills.length === 0) {
-    return <div>Loading...</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-center p-[180px_24px_100px_24px] gap-[138px] h-[220vw] w-full text-white">LOADING SCREEN</div>;
   }
 
   return (
@@ -101,7 +101,7 @@ const ProfileSkills = () => {
             checked={skills.includes(skill)}
             disabled
           />
-          
+
           <label htmlFor={skill} className="text-lg">
             {skill}
           </label>

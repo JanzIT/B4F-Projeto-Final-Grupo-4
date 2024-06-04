@@ -16,22 +16,22 @@ const getAllUsersFromDatabase = async () => {
 
 async function registerUser(userInfo) {
     try {
-      const collection = await getMongoCollection('DBtest', 'users');
-      const existingUser = await collection.findOne({ email: userInfo.email });
-      if (existingUser) {
-        throw new Error('Email already exists');
-      }
-  
-      const hashedPassword = await bcrypt.hash(userInfo.password, 10); 
-      userInfo.password = hashedPassword;
-  
-      const result = await collection.insertOne(userInfo);
-      return result.insertedId;
+        const collection = await getMongoCollection('DBtest', 'users');
+        const existingUser = await collection.findOne({ email: userInfo.email });
+        if (existingUser) {
+            throw new Error('Email already exists');
+        }
+
+        const hashedPassword = await bcrypt.hash(userInfo.password, 10);
+        userInfo.password = hashedPassword;
+
+        const result = await collection.insertOne(userInfo);
+        return result.insertedId;
     } catch (error) {
-      throw error;
+        throw error;
     }
-  }
-  
+}
+
 
 const authUser = async (email, password) => {
     try {
@@ -48,7 +48,7 @@ const authUser = async (email, password) => {
         }
 
         // Generate a JWT token
-        const token = jwt.sign({ userId: user._id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id, email: user.email }, SECRET_KEY, { expiresIn: '5000h' });
 
         return { user, token };
     } catch (error) {

@@ -67,7 +67,7 @@ function Dashboard() {
   }, [isLoading, user]);
 
   if (!user || isLoading) {
-    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-end p-[180px_24px_100px_24px] gap-[138px] text-white">LOADING SCREEN</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-center p-[180px_24px_100px_24px] gap-[138px] h-[220vw] w-full text-white">LOADING SCREEN</div>;
   }
 
   const [firstCareer, secondCareer, thirdCareer, fourthCareer, fifthCareer] =

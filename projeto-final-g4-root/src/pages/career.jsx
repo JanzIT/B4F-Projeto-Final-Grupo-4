@@ -29,7 +29,7 @@ function Career() {
   }, [user?._id]);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-center p-[180px_24px_100px_24px] gap-[138px] h-[220vw] w-full text-white">LOADING SCREEN</div>;
   }
 
   const navigateToCourse = () => {
@@ -63,11 +63,11 @@ function Career() {
         <CareerPlan />
       </div>
 
-  
-        <p className="text-2xl mb-3">Recommended course</p>
-        <CourseCardCareer career={chosenCareer} 
+
+      <p className="text-2xl mb-3">Recommended course</p>
+      <CourseCardCareer career={chosenCareer}
         onClick={navigateToCourse} />
-      
+
 
       <NavBar />
       <div className="h-20 w-11/12"></div>

@@ -31,7 +31,7 @@ function CoursePage() {
   }, [user?._id]);
 
   if (!user || !chosenCareer) {
-    return <div>Loading...</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-center p-[180px_24px_100px_24px] gap-[138px] h-[220vw] w-full text-white">LOADING SCREEN</div>;
   }
 
 
@@ -43,8 +43,8 @@ function CoursePage() {
     <div className="bg-slate-950 p-6 min-h-screen text-white">
       <div className="flex items-center mb-6">
 
-      <button onClick={backToCareer} className="mr-4">
-          <IoIosArrowBack  className="text-white text-2xl"/>
+        <button onClick={backToCareer} className="mr-4">
+          <IoIosArrowBack className="text-white text-2xl" />
         </button>
         <h1 className="text-2xl font-medium">Recommended course</h1>
       </div>

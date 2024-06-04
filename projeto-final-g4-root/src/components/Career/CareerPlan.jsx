@@ -43,7 +43,7 @@ const CareerPlan = () => {
     fetchCareerPlan();
   }, [user]);
 
-  console.log({user})
+  console.log({ user })
 
   const addSkill = async (level, index, isChecked) => {
     if (!isChecked) {
@@ -100,7 +100,7 @@ const CareerPlan = () => {
   );
 
   if (loading) {
-    return <div>Loading career plan...</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-center p-[180px_24px_100px_24px] gap-[138px] h-[220vw] w-full text-white">Loading career plan...</div>;
   }
 
   if (!careerPlan) {
