@@ -61,13 +61,13 @@ function Dashboard() {
         };
         fetchUserData();
       }
-    }, 5000); // Retry every 5 seconds
+    }, 1500); // Retry every 1.5 seconds
 
     return () => clearInterval(intervalId); // Clear interval on component unmount
   }, [isLoading, user]);
 
   if (!user || isLoading) {
-    return <div>LOADING SCREEN</div>;
+    return <div className="bg-gradient-to-b from-slate-950 to-violet-950 inline-flex flex-col items-end p-[180px_24px_100px_24px] gap-[138px] text-white">LOADING SCREEN</div>;
   }
 
   const [firstCareer, secondCareer, thirdCareer, fourthCareer, fifthCareer] =
