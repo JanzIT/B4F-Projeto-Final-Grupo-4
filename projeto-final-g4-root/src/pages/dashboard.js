@@ -61,7 +61,7 @@ function Dashboard() {
         };
         fetchUserData();
       }
-    }, 1500); // Retry every 1.5 seconds
+    }, 1000); // Retry every 1.5 seconds
 
     return () => clearInterval(intervalId); // Clear interval on component unmount
   }, [isLoading, user]);
