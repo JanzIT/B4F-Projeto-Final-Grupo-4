@@ -16,6 +16,7 @@ function Dashboard() {
   const [careerSuggestions, setCareerSuggestions] = useState([]);
   const [selectedCareer, setSelectedCareer] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // State for loading
   const { user, setUser } = useUser();
   const router = useRouter();
 
@@ -29,6 +30,7 @@ function Dashboard() {
             setUser(data.user);
             setUserName(data.user.name);
             setCareerSuggestions(data.user.careerSuggestions || []);
+            setIsLoading(false); // Data is loaded, set loading to false
           }
         } catch (error) {
           console.error("Error fetching career suggestions:", error);
@@ -39,7 +41,32 @@ function Dashboard() {
     fetchUserData();
   }, [user?._id]);
 
-  if (!user) {
+  useEffect(() => {
+    // Retry fetching user data until it's loaded
+    const intervalId = setInterval(() => {
+      if (isLoading && user && user._id) {
+        const fetchUserData = async () => {
+          try {
+            const response = await fetch(`/api/user/${user._id}`);
+            const data = await response.json();
+            if (data.user) {
+              setUser(data.user);
+              setUserName(data.user.name);
+              setCareerSuggestions(data.user.careerSuggestions || []);
+              setIsLoading(false); // Data is loaded, set loading to false
+            }
+          } catch (error) {
+            console.error("Error fetching career suggestions:", error);
+          }
+        };
+        fetchUserData();
+      }
+    }, 5000); // Retry every 5 seconds
+
+    return () => clearInterval(intervalId); // Clear interval on component unmount
+  }, [isLoading, user]);
+
+  if (!user || isLoading) {
     return <div>LOADING SCREEN</div>;
   }
 
@@ -93,7 +120,7 @@ function Dashboard() {
         <div>
           <h1 className="text-3xl font-semibold mb-4">Hi, {userName}</h1>
           <h2 className="font-medium text-2xl">Find your new career</h2>
-          
+
         </div>
         <div className="h-20 mb-2">
           <img src="/profile.webp" alt="profile" className="mb-6 h-20" />
@@ -109,7 +136,7 @@ function Dashboard() {
             placeholder="Search..."
           />
         </div>
-        <p className="mb-4 mt-8">This career is an 80% match for you.</p>
+        <p className="mb-4 mt-8">These careers match your personality.</p>
       </div>
 
       {firstCareer && (
